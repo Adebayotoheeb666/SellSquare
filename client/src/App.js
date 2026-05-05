@@ -60,6 +60,7 @@ import InternalOrderDetail from "./pages/product/marketplace/InternalOrderDetail
 import BuyerOrders from "./pages/web/Marketplace/BuyerOrders";
 import BuyerOrderDetail from "./pages/web/Marketplace/BuyerOrderDetail";
 import BuyerWallet from "./pages/web/Marketplace/BuyerWallet";
+import BuyerTransactions from "./pages/web/Marketplace/BuyerTransactions";
 import BuyerProtectedRoute from "./components/BuyerProtectedRoute";
 import { restoreBuyerSession } from "./redux/features/buyerAuth/buyerAuthSlice";
 import { clearAccessToken } from "./utils/authSession";
@@ -243,6 +244,14 @@ function App() {
           element={
             <BuyerProtectedRoute>
               <BuyerWallet />
+            </BuyerProtectedRoute>
+          }
+        />
+        <Route
+          path="/marketplace/buyer/transactions"
+          element={
+            <BuyerProtectedRoute>
+              <BuyerTransactions />
             </BuyerProtectedRoute>
           }
         />

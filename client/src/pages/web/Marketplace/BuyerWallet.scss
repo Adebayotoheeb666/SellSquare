@@ -234,6 +234,26 @@
   }
 }
 
+.transactions-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.view-all-link {
+  font-family: "Manrope";
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-color);
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 .transactions-list {
   background: #fff;
   border-radius: 12px;

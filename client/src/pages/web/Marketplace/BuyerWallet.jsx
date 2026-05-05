@@ -210,7 +210,12 @@ const BuyerWallet = () => {
           )}
 
           <div className="transactions-section">
-            <h2>Transaction History</h2>
+            <div className="transactions-header-row">
+              <h2>Transaction History</h2>
+              <Link to="/marketplace/buyer/transactions" className="view-all-link">
+                View All
+              </Link>
+            </div>
 
             {transactionsLoading ? (
               <div className="loading-state">
@@ -224,7 +229,7 @@ const BuyerWallet = () => {
             ) : (
               <>
                 <div className="transactions-list">
-                  {transactions.map((transaction, index) => (
+                  {transactions.slice(0, 5).map((transaction, index) => (
                     <div key={index} className="transaction-item">
                       <div className="transaction-info">
                         <p className="transaction-reason">{transaction.reason}</p>

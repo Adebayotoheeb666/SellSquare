@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nino Marketplace Webhook V2",
+  "type": "object",
+  "required": [
+    "eventId",
+    "deliveryId",
+    "correlationId",
+    "eventType",
+    "schemaVersion",
+    "occurredAt",
+    "order",
+    "lines"
+  ],
+  "properties": {
+    "eventId": { "type": "string", "minLength": 36 },
+    "deliveryId": { "type": "string", "minLength": 8 },
+    "correlationId": { "type": "string" },
+    "eventType": { "type": "string" },
+    "schemaVersion": { "type": "string", "const": "2.0.0" },
+    "occurredAt": { "type": "string" },
+    "order": { "type": "object" },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "lineId",
+          "productId",
+          "requestedQty",
+          "acceptedQty",
+          "rejectedQty",
+          "decisionStatus",
+          "decisionReason",
+          "variantId",
+          "parentGroupId",
+          "groupName",
+          "variantImage",
+          "groupImage"
+        ],
+        "properties": {
+          "lineId": { "type": "string" },
+          "productId": { "type": "string" },
+          "requestedQty": { "type": "number" },
+          "acceptedQty": { "type": "number" },
+          "rejectedQty": { "type": "number" },
+          "decisionStatus": { "type": "string" },
+          "decisionReason": { "type": "string" },
+          "variantId": { "type": "string" },
+          "parentGroupId": { "type": ["string", "null"] },
+          "groupName": { "type": "string" },
+          "variantImage": { "type": "string" },
+          "groupImage": { "type": "string" }
+        }
+      }
+    }
+  }
+}

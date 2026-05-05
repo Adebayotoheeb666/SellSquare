@@ -1,0 +1,512 @@
+.about-root {
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  background: #fff;
+}
+
+.about-top-hero {
+  background: linear-gradient(135deg, #f0f4ff 0%, #f9fafb 100%);
+  padding-bottom: 0;
+  padding: 60px 120px;
+}
+
+.about-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-hero-content {
+  text-align: center;
+}
+
+.about-hero-title {
+  margin: 138px auto 27px;
+  color: #171717;
+  font-family: "Manrope";
+  max-width: 1008px;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 72px;
+  line-height: 104px;
+  letter-spacing: -1%;
+  text-align: center;
+}
+
+.about-hero-subtitle {
+  color: #767676;
+  margin: 0 auto 20px;
+  font-family: "Manrope";
+  max-width: 916px;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.about-content-section {
+  padding: 72px 120px;
+}
+
+.about-content-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section-title {
+  font-family: "Manrope";
+  color: #171717;
+  margin: 0 0 64px 0;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: -1%;
+  text-align: center;
+}
+
+.who-we-are-content {
+  display: flex;
+  align-items: center;
+  gap: 132px;
+}
+
+.who-image {
+  flex-shrink: 0;
+}
+
+.who-image img {
+  width: 100%;
+  max-width: 416px;
+  max-height: 384px;
+  border-radius: 24px;
+}
+
+.who-text {
+  flex: 1;
+}
+
+.who-text p {
+  font-family: "Manrope";
+  color: #171717;
+  margin: 0 0 22px 0;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0%;
+}
+
+.who-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* What is Sell Square Section */
+.what-is-section {
+  background: #f9fafb;
+  padding-bottom: 0;
+}
+
+.what-is-content {
+  display: flex;
+  align-items: center;
+  gap: 132px;
+  margin: 0 0 56px
+}
+
+.what-is-left {
+  flex: 1;
+}
+
+.what-is-title {
+  font-family: "Manrope";
+  color: #171717;
+  margin: 0 0 12px 0;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: -1%;
+}
+
+.what-is-subtitle {
+  font-family: "Manrope";
+  margin: 0;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.what-is-right {
+  flex: 1;
+}
+
+.what-is-description {
+  font-family: "Manrope";
+  color: #171717;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0%;
+}
+
+.what-is-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.what-is-item {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.what-is-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.what-is-item-text {
+  font-family: "Manrope";
+  color: #171717;
+  margin: 0;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.about-main-img {
+    max-width: 100%;
+}
+
+/* Join Sellers Section */
+.join-sellers-section-about {
+  padding: 84px 120px;
+  background: #D0F2D2;
+}
+
+.join-sellers-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.join-sellers-box-about {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: #295f2d;
+  padding: 67px 35px 0 70px;
+  box-sizing: border-box;
+  border-radius: 24px;
+}
+
+.join-media img {
+  width: 498.5px;
+  height: 354px;
+  opacity: 1;
+  object-fit: fill;
+}
+
+.join-content {
+  flex: 1 1 0;
+}
+
+.join-title-about {
+  font-family: "Manrope";
+  margin: 0 0 18px 0;
+  color: #fff;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: -1%;
+  font-weight: 500;
+  font-style: Medium;
+  max-width: 550px;
+}
+
+.join-title-about .join-brand {
+  font-weight: 700;
+  font-style: Bold;
+  color: #ffe67c;
+}
+
+.join-ctas {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn.create-store {
+  background: #fff;
+  color: #171717;
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-family: "Manrope";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  border: 0.5px solid #f6f6f6;
+  box-shadow: 0px 4px 10px 0px #0000000f;
+}
+
+.btn.explore-market-about {
+  color: #FFE67C;
+  background: #FFE67C1F;
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-family: "Manrope";
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .about-top-hero {
+    padding: 60px 60px;
+  }
+
+  .about-content-section {
+    padding: 60px 60px;
+  }
+
+  .who-we-are-content {
+    gap: 80px;
+  }
+
+  .what-is-content {
+    gap: 80px;
+  }
+
+  .join-sellers-section-about {
+    padding: 60px 60px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-top-hero {
+    padding: 40px 40px;
+  }
+
+  .about-hero-title {
+    font-size: 48px;
+    line-height: 60px;
+    margin: 80px auto 20px;
+  }
+
+  .about-hero-subtitle {
+    font-size: 18px;
+  }
+
+  .about-content-section {
+    padding: 48px 40px;
+  }
+
+  .about-section-title {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+
+  .who-we-are-content {
+    gap: 48px;
+  }
+
+  .who-image img {
+    max-width: 100%;
+  }
+
+  .who-text p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .what-is-content {
+    gap: 48px;
+  }
+
+  .what-is-title {
+    font-size: 28px;
+  }
+
+  .what-is-subtitle,
+  .what-is-description {
+    font-size: 16px;
+  }
+
+  .what-is-item-text {
+    font-size: 15px;
+  }
+
+  .join-sellers-section-about {
+    padding: 60px 40px;
+  }
+
+  .join-sellers-box-about {
+    padding: 48px 28px 0 56px;
+  }
+
+  .join-media img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .join-title-about {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .about-top-hero,
+  .about-content,
+  .team-section {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-top-hero {
+    padding: 32px 24px;
+  }
+
+  .about-hero-title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .about-content-section {
+    padding: 40px 24px;
+  }
+
+  .who-we-are-content {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .what-is-content {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .join-sellers-section-about {
+    padding: 48px 24px;
+  }
+
+  .join-sellers-box-about {
+    flex-direction: column;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+
+  .join-ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .btn.create-store,
+  .btn.explore-market-about {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-top-hero {
+    padding: 40px 24px;
+  }
+
+  .about-hero-title {
+    font-size: 28px;
+    line-height: 36px;
+    margin: 40px auto 16px;
+  }
+
+  .about-hero-subtitle {
+    font-size: 14px;
+  }
+
+  .about-content-section {
+    padding: 40px 24px;
+  }
+
+  .about-section-title {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  .who-we-are-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .who-image img {
+    max-width: 100%;
+  }
+
+  .who-text p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .what-is-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .what-is-title {
+    font-size: 22px;
+  }
+
+  .what-is-subtitle {
+    font-size: 14px;
+  }
+
+  .what-is-description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .what-is-item-text {
+    font-size: 14px;
+  }
+
+  .join-sellers-section-about {
+    padding: 40px 24px;
+  }
+
+  .join-sellers-box-about {
+    padding: 24px 16px;
+  }
+
+  .join-media img {
+    max-width: 100%;
+  }
+
+  .join-title-about {
+    font-size: 20px;
+    max-width: 100%;
+  }
+
+  .btn.create-store,
+  .btn.explore-market-about {
+    font-size: 14px;
+    padding: 14px 24px;
+  }
+}

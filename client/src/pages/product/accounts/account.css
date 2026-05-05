@@ -1,0 +1,2066 @@
+.business-profile * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.business-profile {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== Modern Business Profile Styles ===== */
+.business-profile-modern {
+    padding: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Profile Header Card */
+.profile-header-card {
+    background: var(--brand-color);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-header-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(30%, -30%);
+}
+
+.profile-header-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 1;
+    z-index: 1;
+}
+
+.profile-logo-wrapper {
+    position: relative;
+}
+
+.profile-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.logo-badge {
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    background: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo-badge svg {
+    color: var(--brand-color);
+}
+
+.profile-header-info {
+    flex: 1;
+}
+
+.business-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 8px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.business-industry {
+    margin: 0;
+}
+
+.industry-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.edit-profile-btn {
+    background: white;
+    color: var(--brand-color);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.edit-profile-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background: #f8f9fa;
+}
+
+.edit-profile-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Info Grid */
+.profile-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e9ecef;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.info-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.info-card-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid var(--brand-color);
+}
+
+.info-card-header svg {
+    color: var(--brand-color);
+    flex-shrink: 0;
+}
+
+.info-card-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.info-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f3f5;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info-row svg {
+    color: var(--brand-color);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.info-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: 16px;
+    font-weight: 500;
+    color: #212529;
+    word-break: break-word;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-header-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+    }
+
+    .profile-header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .edit-profile-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .business-name {
+        font-size: 24px;
+    }
+
+    .profile-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card-body {
+        padding: 16px;
+    }
+}
+
+/* ===== Original Account Styles ===== */
+
+/* Account Header */
+.account-header {
+    margin-bottom: 24px;
+    padding: 0 4px;
+}
+
+.account-label {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+/* Account Content */
+.account-content {
+    background: transparent;
+}
+
+.api-keys-container {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+}
+
+.api-keys-container h3 {
+    margin: 0 0 12px;
+    color: #202020;
+}
+
+.api-keys-note {
+    color: #5f6368;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.api-keys-warning {
+    margin-bottom: 14px;
+    border: 1px solid #fedf89;
+    background: #fffaeb;
+    color: #7a2e0e;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 13px;
+}
+
+.api-keys-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.api-keys-form label {
+    font-size: 14px;
+    color: #3d3d3d;
+    font-weight: 500;
+}
+
+.api-keys-form input {
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.api-keys-form textarea {
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.api-keys-form select {
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    background: #fff;
+}
+
+.api-keys-webhook-form {
+    margin-top: 8px;
+}
+
+.api-keys-scopes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.api-keys-scope-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 6px 8px;
+    font-size: 13px;
+}
+
+.api-keys-form button {
+    width: fit-content;
+    background: var(--brand-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.api-keys-form button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.api-keys-result {
+    margin-top: 18px;
+    border: 1px solid #d9f2dc;
+    border-radius: 10px;
+    background: #f4fbf5;
+    padding: 14px;
+}
+
+.api-keys-result h4 {
+    margin: 0 0 8px;
+    color: #1a7f37;
+}
+
+.api-keys-result p {
+    margin: 4px 0;
+    word-break: break-all;
+}
+
+.api-keys-secret-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.api-keys-secret-actions button {
+    border: 1px solid #d0d5dd;
+    border-radius: 7px;
+    background: #fff;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.api-keys-toolbar {
+    margin: 0 0 14px;
+}
+
+.api-keys-refresh-btn {
+    border: 1px solid #d0d5dd;
+    background: #fff;
+    color: #344054;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.api-keys-list {
+    margin-top: 20px;
+}
+
+.api-keys-list h4 {
+    margin-bottom: 10px;
+}
+
+.api-keys-empty {
+    color: #667085;
+    font-size: 14px;
+}
+
+.api-keys-table-wrap {
+    overflow-x: auto;
+}
+
+.api-keys-table {
+    width: max-content;
+    min-width: 100%;
+    border-collapse: collapse;
+}
+
+.api-keys-table th,
+.api-keys-table td {
+    text-align: left;
+    border-bottom: 1px solid #eaecf0;
+    padding: 10px 8px;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.api-keys-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.api-keys-actions button {
+    border: 1px solid #d0d5dd;
+    background: #fff;
+    border-radius: 7px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.api-keys-actions .revoke-btn {
+    border-color: #fecaca;
+    color: #b91c1c;
+}
+
+.api-keys-icon-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.api-keys-nowrap {
+    white-space: nowrap;
+}
+
+.api-keys-edit-panel {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.api-keys-edit-panel input,
+.api-keys-edit-panel textarea {
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 8px 10px;
+}
+
+.api-keys-edit-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.api-keys-edit-actions button {
+    border: 1px solid #d0d5dd;
+    background: #fff;
+    border-radius: 7px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.api-keys-actions button:disabled,
+.api-keys-refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .business-profile {
+        padding: 16px;
+    }
+
+    .api-keys-container {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+    }
+}
+
+.business-profile .business-profile-item {
+    width: 100%;
+}
+
+/* Section Container */
+.business-profile-item>div {
+    background: transparent;
+    border-radius: 12px;
+    padding: 24px;
+    border: 2px solid #dee2e6;
+    margin-bottom: 20px;
+}
+
+.business-profile-item>div:last-child {
+    margin-bottom: 0;
+}
+
+.add-sales-rep {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.add-sales-rep h3 {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.add-sales-rep button {
+    padding: 10px 24px;
+    border: none;
+    background: var(--brand-color);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.add-sales-rep button:hover {
+    background: #1e4620;
+    transform: translateY(-2px);
+}
+
+.business-profile .business-profile-item.stores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.business-profile .business-profile-item.stores h3 {
+    font-size: 24px;
+    margin: 0;
+    color: #666;
+}
+
+.business-profile .business-profile-item h3 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.business-profile .business-profile-item .item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    gap: 20px;
+}
+
+.business-profile .business-profile-item .item-container .item-img-name {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 0;
+}
+
+
+
+.item-container .item-img-name .sales-permissions {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.item-container .item-img-name .sales-permissions h3 {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.item-container .item-img-name .sales-permissions tr {
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.item-container .item-img-name .sales-permissions tr:last-child {
+    border-bottom: none;
+}
+
+.item-img-name .sales-permissions tr td {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    color: #495057;
+}
+
+.item-img-name .sales-permissions tr td:nth-child(1) {
+    flex: 1;
+}
+
+.item-img-name .sales-permissions tr td:nth-child(2) {
+    font-weight: 600;
+    color: var(--brand-color);
+    text-align: right;
+    min-width: 60px;
+}
+
+.business-profile-item .item-container .item-img-name img {
+    height: 80px;
+    width: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid #e9ecef;
+    flex-shrink: 0;
+}
+
+.business-profile-item .item-container .item-img-name h2 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 4px;
+    color: #333;
+    word-break: break-word;
+}
+
+.business-profile-item .item-container .item-img-name h5 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+.business-profile-item .item-container .item-action {
+    padding: 10px 20px;
+    border: 1.5px solid var(--brand-color);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    background: white;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.business-profile-item .item-container .item-action:hover {
+    background: var(--brand-color);
+    transform: translateY(-2px);
+}
+
+.business-profile-item .item-container .item-action:hover label,
+.business-profile-item .item-container .item-action:hover svg {
+    color: white;
+    stroke: white;
+}
+
+.business-profile-item .item-container .item-action label,
+.item-action-container label {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--brand-color);
+    margin: 0;
+}
+
+.business-profile-item .item-container .item-action svg {
+    stroke: var(--brand-color);
+    transition: all 0.2s;
+}
+
+.business-profile-item .item-container .item-action-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.item-action.upgrade {
+    background: transparent;
+    color: var(--brand-color);
+    border: 1.5px solid var(--brand-color);
+}
+
+.item-action.upgrade:hover {
+    background: var(--brand-color);
+    border-color: var(--brand-color);
+    color: #fff;
+}
+
+.item-action.upgrade label,
+.item-action.upgrade a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.item-action.upgrade svg {
+    stroke: var(--brand-color);
+    transition: all 0.2s;
+}
+
+.item-action.upgrade:hover svg {
+    stroke: #fff;
+}
+
+.subscription-plan {
+    flex: 1;
+    min-width: 0;
+}
+
+.subscription-plan>div {
+    margin-bottom: 16px;
+}
+
+.subscription-plan>div:last-child {
+    margin-bottom: 0;
+}
+
+.item-name.subscription-plan>div h3 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0 0 8px 0;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.subscription-plan>div h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--brand-color);
+    margin: 0;
+}
+
+.subscription-plan>div h4 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #6c757d;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.subscription-plan>div h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #333;
+    margin: 0;
+}
+
+
+
+
+
+/* Adding new sales person */
+
+.add-new-sales {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px);
+    /* max-height: 100vh; */
+    overflow-y: auto;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.add-new-sales .new-sales-data {
+    background: #fff;
+    padding: 40px;
+    border-radius: 24px;
+    margin-top: 60px;
+    height: max-content;
+}
+
+.add-new-sales .new-sales-data .sales-details {
+    width: 100%;
+}
+
+.new-sales-data .sales-details h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--brand-color);
+}
+
+.add-new-sales .new-sales-data .sales-details .form-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.new-sales-data .sales-details .form-field>div {
+    width: 48%;
+}
+
+.new-sales-data .sales-details .form-field>div input {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--brand-color);
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+}
+
+.new-sales-data .sales-details .form-field>div label {
+    margin-bottom: 4px;
+    padding: 0 12px;
+    font-size: 16px;
+    color: var(--brand-color);
+    line-height: 24px;
+}
+
+.form-field .password-input {
+    position: relative;
+    cursor: pointer;
+}
+
+.form-field .show-password {
+    position: absolute;
+    right: 30px;
+    top: 55%;
+}
+
+.form-field .show-password .cross-line {
+    width: 27px;
+    height: 2px;
+    background: var(--brand-color);
+    position: absolute;
+    top: 44%;
+    right: -2px;
+    transform: rotate(-40deg);
+}
+
+.new-sales-data .permissions h3 {
+    margin-bottom: 12px;
+}
+
+.new-sales-data .permissions .permissions-boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.permissions .permissions-boxes label {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: var(--brand-color);
+    gap: 16px;
+}
+
+.new-sales-data .branch-assignments {
+    margin: 24px 0;
+    padding: 16px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.new-sales-data .branch-assignments h3 {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.new-sales-data .branch-assignments .branch-subtitle {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.new-sales-data .branch-assignments .branch-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.new-sales-data .branch-assignments .branch-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+.new-sales-data .branch-assignments .branch-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.new-sales-data .branch-assignments .branch-checkbox input {
+    cursor: pointer;
+}
+
+.new-sales-data .branch-assignments .branch-checkbox label {
+    cursor: pointer;
+    font-size: 13px;
+    color: #333;
+    margin: 0;
+}
+
+.new-sales-data .branch-assignments .admin-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--brand-color);
+    cursor: pointer;
+    margin: 0;
+}
+
+.new-sales-data .branch-assignments .admin-checkbox input {
+    cursor: pointer;
+}
+
+.new-sales-data .branch-assignments .branch-permissions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0 0 24px;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 3px solid var(--brand-color);
+    width: 100%;
+}
+
+.new-sales-data .branch-assignments .branch-permissions label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+}
+
+.new-sales-data .branch-assignments .branch-permissions input {
+    cursor: pointer;
+}
+
+.new-sales-data .submit-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.new-sales-data .submit-buttons button {
+    width: 48%;
+    border: 1px solid var(--brand-color);
+    padding: 12px;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: transparent;
+    border-radius: 12px;
+}
+
+.new-sales-data .submit-buttons button.add {
+    background: var(--brand-color);
+    color: #fff;
+}
+
+
+
+/* Edit business ------------------------------------------------ */
+.edit-business-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    min-height: 80vh;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+    overflow-y: auto;
+}
+
+.edit-business-modal__card {
+    background: #fff;
+    width: min(900px, 92vw);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+    animation: modalIn 0.2s ease;
+}
+
+.edit-business-modal .sign-up-businesss.edit {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.edit-business-modal .sign-up-businesss.edit .sign-up-business-header h2 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 28px;
+    line-height: 32px;
+    color: var(--brand-color);
+}
+
+.edit-business-modal .sign-up-businesss.edit .sign-up-actions h3 {
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 12px;
+    color: var(--brand-color);
+}
+
+.edit-business-modal .sign-up-businesss.edit .edit-buttons {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+/* Tablets and below */
+@media screen and (max-width: 768px) {
+    .business-profile {
+        padding: 16px;
+    }
+
+    .account-label {
+        font-size: 24px;
+    }
+
+    .business-profile-item>div {
+        padding: 20px;
+    }
+
+    .business-profile .business-profile-item h3 {
+        font-size: 16px;
+    }
+
+    .business-profile .business-profile-item .item-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+    }
+
+    .business-profile .business-profile-item .item-container .item-img-name {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .business-profile-item .item-container .item-img-name img {
+        align-self: center;
+        margin-bottom: 16px;
+    }
+
+    .business-profile-item .item-container .item-action-container {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 16px;
+    }
+
+    .business-profile-item .item-container .item-action {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .add-sales-rep {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .add-sales-rep button {
+        width: 100%;
+    }
+
+    .subscription-plan>div h1 {
+        font-size: 28px;
+    }
+
+    .item-container .item-img-name .sales-permissions {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    /* Modal responsiveness */
+    .add-new-sales .new-sales-data {
+        width: 95%;
+        padding: 24px;
+        margin-top: 20px;
+    }
+
+    .new-sales-data .sales-details .form-field {
+        flex-direction: column;
+    }
+
+    .new-sales-data .sales-details .form-field>div {
+        width: 100%;
+    }
+
+    .new-sales-data .permissions .permissions-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .new-sales-data .submit-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .new-sales-data .submit-buttons button {
+        width: 100%;
+    }
+
+    .edit-business-modal {
+        align-items: flex-start;
+        padding: 24px 12px;
+    }
+
+    .edit-business-modal__card {
+        width: 100%;
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .edit-business-modal .sign-up-businesss.edit {
+        width: 95%;
+        padding: 24px;
+        margin: 40px 0;
+    }
+
+    .edit-business-modal .sign-up-businesss.edit .edit-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .business-profile {
+        padding: 12px;
+    }
+
+    .account-header {
+        margin-bottom: 16px;
+    }
+
+    .account-label {
+        font-size: 20px;
+    }
+
+    .business-profile-item>div {
+        padding: 16px;
+        border-radius: 8px;
+    }
+
+    .business-profile .business-profile-item .item-container {
+        padding: 16px;
+        border-radius: 8px;
+    }
+
+    .business-profile-item .item-container .item-img-name h2 {
+        font-size: 16px;
+    }
+
+    .business-profile-item .item-container .item-img-name h5 {
+        font-size: 13px;
+    }
+
+    .business-profile-item .item-container .item-action {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .subscription-plan>div h1 {
+        font-size: 24px;
+    }
+
+    .subscription-plan>div h3,
+    .subscription-plan>div h4 {
+        font-size: 12px;
+    }
+
+    .subscription-plan>div h6 {
+        font-size: 14px;
+    }
+
+    .item-img-name .sales-permissions tr td {
+        font-size: 12px;
+    }
+
+    .add-new-sales .new-sales-data {
+        padding: 20px;
+    }
+
+    .new-sales-data .sales-details h1 {
+        font-size: 22px;
+    }
+
+    .new-sales-data .sales-details .form-field>div input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .new-sales-data .sales-details .form-field>div label {
+        font-size: 14px;
+    }
+
+    /* width: 100%; */
+}
+
+.edit-business-modal .sign-up-businesss.edit .edit-buttons button {
+    width: 50%;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    border: none;
+    color: #fff;
+    background: var(--brand-color);
+    border-radius: 12px;
+}
+
+.sign-up-businesss.edit .edit-buttons button.cancel {
+    border: 1px solid var(--brand-color);
+    background: transparent;
+    color: var(--brand-color);
+}
+
+@media screen and (max-width: 430px) {
+    .business-profile {
+        margin: 0 18px;
+        display: flex;
+    }
+
+    .business-profile {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .business-profile .profile-navigation {
+        width: 100%;
+    }
+
+    .business-profile .profile-navigation ul li {
+        margin-bottom: 16px;
+    }
+
+    .business-profile .business-profile-item {
+        width: 100%;
+    }
+
+    .business-profile .business-profile-item.stores {
+        padding: 36px 0;
+    }
+
+    .business-profile .business-profile-item .item-container {
+        border-radius: 20px;
+        padding: 30px 12px;
+    }
+
+    .business-profile .business-profile-item .item-container .item-img-name {
+        gap: 8px;
+    }
+
+    .business-profile-item .item-container .item-img-name img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .business-profile-item .item-container .item-img-name h2 {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        margin-bottom: 2px;
+    }
+
+    .business-profile-item .item-container .item-img-name h5 {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .business-profile-item .item-container label {
+        font-size: 8px;
+        line-height: 15px;
+    }
+
+    .business-profile-item .item-container img {
+        width: 10px;
+        height: 10px;
+    }
+
+
+    .item-name.subscription-plan>div h3 {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .subscription-plan>div h1 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .subscription-plan>div h4 {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .subscription-plan>div h6 {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .item-action.upgrade a {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .business-profile .business-profile-item.stores {
+
+        align-items: center;
+        border-radius: 24px;
+        border: 1px solid var(--brand-color);
+    }
+
+    .business-profile .business-profile-item.stores h3 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+
+    .business-profile-item .item-container .item-action-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .business-profile-item .item-container .item-action-container .item-action {
+        padding: 6px 12px;
+    }
+
+
+
+    .item-container .item-img-name .sales-permissions {
+        width: 130%;
+    }
+
+    .item-container .item-img-name .sales-permissions h3 {
+        margin-bottom: 10px;
+        line-height: 15px;
+    }
+
+    .item-container .item-img-name .sales-permissions td {
+        margin-bottom: 10px;
+        line-height: 15px;
+    }
+
+    .add-new-sales .new-sales-data {
+        padding: 40px 20px;
+        margin: 60px 10px;
+        border-radius: 24px;
+    }
+
+    .add-new-sales .new-sales-data .sales-details .form-field {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .new-sales-data .sales-details .form-field>div {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+
+
+
+
+
+
+
+
+
+    /* Add New sales Modal */
+
+    .add-new-sales .new-sales-data {
+        padding: 40px 15px;
+        border-radius: 12px;
+    }
+
+    .new-sales-data .sales-details h1 {
+        margin-bottom: 18px;
+        line-height: 28px;
+    }
+
+    .add-new-sales .new-sales-data .sales-details .form-field {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .new-sales-data .sales-details .form-field>div {
+        width: 48%;
+    }
+
+    .new-sales-data .sales-details .form-field>div input {
+        border-radius: 8px;
+        font-size: 12px;
+        padding: 9px;
+        line-height: 21px;
+    }
+
+    .new-sales-data .sales-details .form-field>div label {
+        padding: 0 8px;
+        font-size: 12px;
+        line-height: 21px;
+    }
+
+    .form-field .password-input {
+        position: relative;
+        cursor: pointer;
+    }
+
+
+    .permissions .permissions-boxes label {
+        font-size: 10px;
+        line-height: 21px;
+    }
+
+    .new-sales-data .submit-buttons button {
+        font-size: 12px;
+        padding: 9px;
+        line-height: 21px;
+        border-radius: 8px;
+    }
+
+    .new-sales-data .submit-buttons button.add {
+        background: var(--brand-color);
+        color: #fff;
+    }
+
+
+
+
+
+
+
+
+    /* Edit Business */
+
+    .edit-business-modal .sign-up-businesss.edit {
+        width: 95%;
+        padding: 40px 15px;
+    }
+
+    .edit-business-modal .sign-up-businesss.edit .sign-up-business-header h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .edit-business-modal .sign-up-businesss.edit .sign-up-actions h3 {
+        font-size: 18px;
+        margin: 12px 0;
+    }
+
+
+    .edit-business-modal .sign-up-businesss.edit .edit-buttons button {
+        padding: 12px;
+        font-size: 12px;
+        line-height: 21px;
+        border-radius: 8px;
+    }
+}
+
+/* Additional Styles for Account Pages */
+
+/* Add Sales Rep Section */
+.add-sales-rep {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 16px 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.add-sales-rep h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin: 0;
+}
+
+.add-sales-rep button {
+    padding: 10px 24px;
+    background: var(--brand-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-sales-rep button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Item Action Container for Multiple Actions */
+.item-action-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.item-action-container label {
+    padding: 8px 16px;
+    background: var(--brand-color);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 80px;
+}
+
+.item-action-container label:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.item-action-container label:last-child {
+    background: #dc3545;
+}
+
+.item-action-container label:last-child:hover {
+    background: #c82333;
+}
+
+/* Add Store Button */
+.add-store-btn {
+    margin-top: 20px;
+    padding: 12px 32px;
+    width: 100%;
+    background: var(--brand-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-store-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Stores Coming Soon */
+.stores {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.stores h3 {
+    font-size: 24px;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+}
+
+.stores a {
+    display: inline-block;
+    padding: 12px 32px;
+    background: var(--brand-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.stores a:hover {
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.edit-business-modal,
+.modal-store,
+.subscriberModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+/* Staff Actions Buttons */
+.staff-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.staff-actions button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1.5px solid;
+}
+
+.staff-actions .btn-edit {
+    background: transparent;
+    color: var(--brand-color);
+    border-color: var(--brand-color);
+}
+
+.staff-actions .btn-edit:hover {
+    background: var(--brand-color);
+    color: white;
+}
+
+.staff-actions .btn-edit svg {
+    stroke: var(--brand-color);
+    transition: all 0.2s;
+}
+
+.staff-actions .btn-edit:hover svg {
+    stroke: white;
+}
+
+.staff-actions .btn-delete {
+    background: transparent;
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.staff-actions .btn-delete:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.staff-actions .btn-delete svg {
+    stroke: #dc3545;
+    transition: all 0.2s;
+}
+
+.staff-actions .btn-delete:hover svg {
+    stroke: white;
+}
+
+/* Add/Edit Staff Modal */
+.add-new-sales {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.new-sales-data {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.sales-details h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.form-field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.form-field>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-field input {
+    padding: 12px;
+    border: 1.5px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.form-field input:focus {
+    outline: none;
+    border-color: var(--brand-color);
+    box-shadow: 0 0 0 3px rgba(41, 95, 45, 0.1);
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-input input {
+    padding-right: 40px;
+}
+
+.show-password {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-password svg {
+    stroke: #6c757d;
+}
+
+.cross-line {
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: #6c757d;
+    transform: rotate(-45deg);
+    z-index: 1;
+}
+
+.permissions {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 2px solid #e9ecef;
+}
+
+.permissions h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.permissions-boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.permissions-boxes label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.2s;
+}
+
+.permissions-boxes label:hover {
+    background: #e9ecef;
+}
+
+.permissions-boxes input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--brand-color);
+}
+
+.submit-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.submit-buttons button {
+    flex: 1;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1.5px solid;
+}
+
+.submit-buttons .add {
+    background: var(--brand-color);
+    color: white;
+    border-color: var(--brand-color);
+}
+
+.submit-buttons .add:hover {
+    background: #1e4620;
+    border-color: #1e4620;
+}
+
+.submit-buttons .cancel {
+    background: transparent;
+    color: #6c757d;
+    border-color: #dee2e6;
+}
+
+.submit-buttons .cancel:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+}
+
+/* Mobile Adjustments for New Elements */
+@media (max-width: 768px) {
+    .new-sales-data {
+        padding: 24px;
+    }
+
+    .form-field {
+        grid-template-columns: 1fr;
+    }
+
+    .permissions-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .staff-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .staff-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .add-sales-rep {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .add-sales-rep button {
+        width: 100%;
+    }
+
+    .add-new-sales {
+        padding: 8px;
+    }
+
+    .new-sales-data {
+        padding: 12px;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .sales-details h1 {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .form-field {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: none !important;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .form-field>div {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+    }
+
+    .form-field label {
+        width: 100%;
+    }
+
+    .form-field input {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .password-input {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .password-input input {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .permissions {
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+
+    .permissions h3 {
+        font-size: 14px;
+    }
+
+    .permissions-boxes {
+        gap: 10px;
+    }
+
+    .permissions-boxes label {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .submit-buttons {
+        flex-direction: column;
+        margin-top: 24px;
+        gap: 10px;
+    }
+
+    .submit-buttons button {
+        padding: 12px;
+        font-size: 14px;
+        width: 100%;
+    }
+}

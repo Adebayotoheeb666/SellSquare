@@ -1,0 +1,79 @@
+.business-reg-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 100px;
+}
+
+.business-reg-success .success-registration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    justify-content: center;
+}
+
+.business-reg-success .success-registration img {
+    margin-bottom: 64px;
+}
+
+.business-reg-success .success-registration h1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: center;
+    color: var(--brand-color);
+}
+
+.business-reg-success .success-registration p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    margin-bottom: 64px;
+    color: #B1B0B1;
+}
+
+.business-reg-success .success-registration button {
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    border-radius: 12px;
+    border: 12px;
+    color: #fff;
+    background: var(--brand-color);
+}
+
+.business-reg-success .success-registration button .complete-btn {
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    height: 100%;
+}
+
+@media screen and (max-width: 430px) {
+
+    .business-reg-success {
+        padding: 0 30px;
+    }
+
+    .business-reg-success .success-registration img {
+        margin-bottom: 80px;
+        width: 169px;
+        height: 140px;
+    }
+
+    .business-reg-success .success-registration h1 {
+        font-size: 20px;
+    }
+
+    .business-reg-success .success-registration p {
+        margin-bottom: 80px;
+        font-size: 10px;
+    }
+
+    .business-reg-success .success-registration button {
+        font-size: 12px;
+    }
+}

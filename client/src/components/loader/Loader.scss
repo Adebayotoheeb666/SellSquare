@@ -1,0 +1,90 @@
+/* Loading */
+.wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999;
+} 
+
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+}
+
+.loader-children {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  background: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-children p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #fff;
+  background: transparent;
+  text-align: center;
+  width: 80px; 
+}
+
+.loader-children.spinner p {
+  font-size: 12px;
+  font-weight: 400;
+  background: transparent;
+  line-height: 18px;
+  color: #000000;
+  text-align: center;
+}
+
+.loader-children .loader-dots {
+  display: flex;
+  background: transparent;
+  gap: 8px;
+}
+
+.loader-children.spinner .loader-dots .loader-dot {
+  background: var(--brand-color);
+}
+
+.loader-children .loader-dots .loader-dot {
+  width: 14px;
+  height: 14px;  
+  background: transparent;
+  border-radius: 50%;
+  background: #FFF1B7;
+  animation: moveUpDown 1.5s infinite;
+}
+
+.loader-children .loader-dots .loader-dot:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.loader-children .loader-dots .loader-dot:nth-child(3) {
+  animation-delay: 1s;
+}
+
+
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); 
+  }
+}

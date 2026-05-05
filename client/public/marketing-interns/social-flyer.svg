@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" fill="none">
+  <style>
+    .bg { fill: #f7f8f5; }
+    .card { fill: #ffffff; stroke: #295F2D; stroke-width: 3; rx: 24; }
+    .pill { fill: #295F2D; }
+    .pillText { font: 700 26px 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #ffffff; letter-spacing: 0.4px; }
+    .heading { font: 800 60px 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #0f2312; }
+    .sub { font: 500 30px 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #2d3d2f; }
+    .kicker { font: 700 24px 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #295F2D; letter-spacing: 1px; text-transform: uppercase; }
+    .badge { font: 700 26px 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #295F2D; }
+    .cardTitle { font: 700 34px 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #0f2312; }
+    .cardText { font: 500 26px 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #2d3d2f; }
+    .cta { font: 800 32px 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #ffffff; }
+    .ctaSub { font: 600 24px 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #0f2312; }
+    .footer { font: 600 24px 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #2d3d2f; }
+  </style>
+  <rect class="bg" width="1080" height="1350" rx="48" />
+
+  <!-- Header strip -->
+  <rect x="64" y="72" width="228" height="60" rx="30" class="pill" />
+  <text x="86" y="111" class="pillText">Careers · Internships</text>
+  <text x="850" y="111" class="badge">January 2026</text>
+
+  <!-- Hero copy -->
+  <text x="64" y="216" class="heading">
+    <tspan x="64" dy="0">Join SellSquare</tspan>
+    <tspan x="64" dy="68">as a Marketing Intern</tspan>
+  </text>
+  <text x="64" y="322" class="sub">
+    <tspan x="64" dy="0">Ship real campaigns with growth mentors.</tspan>
+    <tspan x="64" dy="40">Build a portfolio that gets noticed.</tspan>
+  </text>
+
+  <!-- CTA -->
+  <rect x="64" y="388" width="720" height="84" rx="18" class="pill" />
+  <text x="90" y="440" class="cta">Apply at SellSquareHub.com/marketing-interns</text>
+  <text x="64" y="494" class="ctaSub">Takes ~5 minutes · Rolling review</text>
+
+  <!-- Tracks cards -->
+  <rect x="64" y="520" width="298" height="260" class="card" />
+  <rect x="391" y="520" width="298" height="260" class="card" />
+  <rect x="718" y="520" width="298" height="260" class="card" />
+  <text x="86" y="570" class="kicker">Track</text>
+  <text x="86" y="614" class="cardTitle">Social Media Manager</text>
+  <text x="86" y="654" class="cardText">
+    <tspan x="86" dy="0">Content strategy</tspan>
+    <tspan x="86" dy="32">Community engagement</tspan>
+    <tspan x="86" dy="32">Analytics & reporting</tspan>
+  </text>
+
+  <text x="413" y="570" class="kicker">Track</text>
+  <text x="413" y="614" class="cardTitle">Email Marketing Specialist</text>
+  <text x="413" y="654" class="cardText">
+    <tspan x="413" dy="0">Email copywriting</tspan>
+    <tspan x="413" dy="32">A/B testing & segmentation</tspan>
+    <tspan x="413" dy="32">Campaign automation</tspan>
+  </text>
+
+  <text x="740" y="570" class="kicker">Track</text>
+  <text x="740" y="614" class="cardTitle">Growth Marketing Lead</text>
+  <text x="740" y="654" class="cardText">
+    <tspan x="740" dy="0">Growth experiments</tspan>
+    <tspan x="740" dy="32">Data analysis & insights</tspan>
+    <tspan x="740" dy="32">Cross-channel strategy</tspan>
+  </text>
+
+  <!-- Value props -->
+  <rect x="64" y="820" width="468" height="146" class="card" />
+  <rect x="548" y="820" width="468" height="146" class="card" />
+  <text x="86" y="878" class="cardTitle">Own campaigns end-to-end</text>
+  <text x="86" y="918" class="cardText">Briefs, copy, assets, dashboards.</text>
+
+  <text x="570" y="878" class="cardTitle">Mentorship that cares</text>
+  <text x="570" y="918" class="cardText">Weekly 1:1s, async feedback, clear goals.</text>
+
+  <rect x="64" y="990" width="468" height="146" class="card" />
+  <rect x="548" y="990" width="468" height="146" class="card" />
+  <text x="86" y="1048" class="cardTitle">Flexible and paid</text>
+  <text x="86" y="1088" class="cardText">Hybrid · 3–6 months · Stipend + learning budget.</text>
+
+  <text x="570" y="1048" class="cardTitle">Ship with a product team</text>
+  <text x="570" y="1088" class="cardText">Work with design, product, and sales to move metrics.</text>
+
+  <!-- Footer -->
+  <text x="64" y="1230" class="footer">Hybrid · Paid · Growth-focused · January 2026</text>
+  <text x="64" y="1270" class="footer">Apply at https://www.sellsquarehub.com/marketing-interns/</text>
+</svg>

@@ -1,0 +1,769 @@
+/* ============================================
+   STATISTICS CONTAINER - MODERN NUDE DESIGN
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Inter', sans-serif; */
+}
+
+/* Main Wrapper */
+.statistics-wrapper {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.statistics-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Statistics Grid Layout - Responsive */
+.statistics-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  overflow-x: auto;
+  padding: 1.5rem 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background: transparent !important;
+}
+
+.statistics-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================
+   STAT CARDS - CLEAN NUDE DESIGN
+   ============================================ */
+
+.stat-card {
+  background: linear-gradient(135deg, rgba(41, 95, 45, 0.04) 0%, rgba(41, 95, 45, 0.02) 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  box-shadow: 0 2px 8px rgba(41, 95, 45, 0.06), 0 1px 3px rgba(41, 95, 45, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(41, 95, 45, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background accent */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--brand-color, #667eea) 0%, transparent 70%);
+  opacity: 0.05;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(41, 95, 45, 0.15), 0 4px 8px rgba(41, 95, 45, 0.1);
+  border-color: rgba(41, 95, 45, 0.2);
+}
+
+/* Icon Styling */
+.stat-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--brand-color) 0%, #1e4a22 100%);
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(41, 95, 45, 0.3);
+  transition: all 0.3s ease;
+}
+
+.stat-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.5;
+}
+
+/* Query card tweaks */
+.query-card {
+  cursor: pointer
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(41, 95, 45, 0.4);
+}
+
+/* Content Styling */
+.stat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(41, 95, 45, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  line-height: 1.2;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--brand-color, #667eea);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* ============================================
+   SCROLL BUTTONS
+   ============================================ */
+
+.scroll-button {
+  background: rgba(41, 95, 45, 0.05);
+  border: 1px solid rgba(41, 95, 45, 0.15);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(41, 95, 45, 0.08);
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.scroll-button:hover {
+  background: var(--brand-color, #667eea);
+  border-color: var(--brand-color, #667eea);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(41, 95, 45, 0.3);
+}
+
+.scroll-button:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.scroll-button img {
+  width: 20px;
+  height: 20px;
+  transition: filter 0.3s ease;
+}
+
+.scroll-button.left {
+  position: absolute;
+  left: 0;
+  display: none;
+}
+
+.scroll-button.right {
+  position: relative;
+}
+
+/* ============================================
+   SORT BY DATE BUTTON
+   ============================================ */
+
+.sort-by-date-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--brand-color, #667eea);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(41, 95, 45, 0.3);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.sort-by-date-btn:hover {
+  background: var(--brand-color, #667eea);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(41, 95, 45, 0.4);
+}
+
+.sort-by-date-btn:active {
+  transform: translateY(0);
+}
+
+.sort-by-date-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.sort-by-date-btn .dropdown-arrow {
+  transition: transform 0.3s ease;
+}
+
+/* ============================================
+   QUERY/DATE PICKER CONTAINER
+   ============================================ */
+
+.query-container-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.query-container {
+  cursor: pointer;
+  position: sticky;
+  background: linear-gradient(135deg, rgba(41, 95, 45, 0.04) 0%, rgba(41, 95, 45, 0.02) 100%);
+  width: 100%;
+  max-width: 240px;
+  left: 0;
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.query-cells {
+  display: none;
+  box-shadow: 2px 2px 10px #ddd;
+  transition: all 0.3s ease;
+}
+
+.query-cells.show-query {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Query Modal Container */
+.show_query_container.sales_page_date_filter {
+  background: #ffffff;
+  margin: 1rem;
+  border-radius: 20px;
+  padding: 4rem 3.5rem;
+  max-width: 500px;
+  width: 90%;
+  height: max-content;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: none;
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Modal Header */
+.modal-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+}
+
+.modal-subtitle {
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Section Styling */
+.date-range-section,
+.quick-select-section {
+  margin-bottom: 2.5rem;
+}
+
+.date-range-section:last-of-type,
+.quick-select-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand-color, #667eea);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-title::before {
+  content: '';
+  width: 3px;
+  height: 3px;
+  background: var(--brand-color, #667eea);
+  border-radius: 50%;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Dates Selection Container */
+.dates_selection {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  background: rgba(41, 95, 45, 0.03);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(41, 95, 45, 0.08);
+}
+
+.from,
+.to {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.from input.date_picker_input,
+.to input.date_picker_input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  box-sizing: border-box;
+  border: 2px solid var(--brand-color, #667eea);
+  border-radius: 10px;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.from input.date_picker_input:focus,
+.to input.date_picker_input:focus {
+  outline: none;
+  border-color: var(--brand-color, #667eea);
+  box-shadow: 0 0 0 3px rgba(41, 95, 45, 0.12);
+  background: #ffffff;
+}
+
+/* Date Dash Separator */
+.query-cells .dash {
+  width: 2px;
+  height: 36px;
+  background: linear-gradient(180deg, transparent 0%, var(--brand-color, #667eea) 50%, transparent 100%);
+  opacity: 0.4;
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+/* Labels in Date Picker */
+.from label,
+.to label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: left;
+  margin: 0;
+  color: var(--brand-color, #667eea);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+/* Set Date Button */
+.setDate {
+  padding: 1rem 1.5rem;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  background: var(--brand-color, #667eea);
+  margin: 0.5rem 0 0 0;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(41, 95, 45, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.setDate:hover {
+  background: var(--brand-color, #667eea);
+  box-shadow: 0 8px 25px rgba(41, 95, 45, 0.4);
+  transform: translateY(-2px);
+}
+
+.setDate:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Specific Date Selection */
+.specific_selection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.quick-select-btn {
+  color: var(--brand-color, #667eea);
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid var(--brand-color, #667eea);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  padding: 1.1rem 0.75rem;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-select-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--brand-color, #667eea);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.quick-select-btn:hover {
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(41, 95, 45, 0.3);
+}
+
+.quick-select-btn:hover::before {
+  left: 0;
+}
+
+.quick-select-btn.selected_date {
+  background: var(--brand-color, #667eea);
+  color: #ffffff;
+  border-color: var(--brand-color, #667eea);
+  box-shadow: 0 6px 16px rgba(41, 95, 45, 0.4);
+}
+
+.quick-select-btn .btn-label {
+  display: block;
+  font-weight: 600;
+}
+
+/* Input Positioning */
+.from>div,
+.to>div {
+  position: relative;
+}
+
+.from>div img,
+.to>div img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  opacity: 0.6;
+}
+
+/* ============================================
+   QUERY TRIGGER BUTTON
+   ============================================ */
+
+.sales-page .query {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(41, 95, 45, 0.04) 0%, rgba(41, 95, 45, 0.02) 100%);
+  border: 1.5px solid rgba(41, 95, 45, 0.15);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.sales-page .query:hover {
+  border-color: rgba(41, 95, 45, 0.3);
+  box-shadow: 0 4px 12px rgba(41, 95, 45, 0.2);
+  background: linear-gradient(135deg, rgba(41, 95, 45, 0.06) 0%, rgba(41, 95, 45, 0.04) 100%);
+}
+
+.sales-page .query span {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: rgba(41, 95, 45, 0.75);
+  transition: color 0.3s ease;
+}
+
+.sales-page .query:hover span {
+  color: var(--brand-color, #667eea);
+}
+
+.sales-page .query img {
+  width: 18px;
+  height: 18px;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.sales-page .query:hover img {
+  opacity: 1;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media screen and (max-width: 1024px) {
+  .statistics-grid {
+    grid-auto-columns: minmax(220px, 1fr);
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .stat-card {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .stat-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .stat-value {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .statistics-grid {
+    grid-auto-columns: minmax(200px, 80vw);
+    gap: 0.9rem;
+    padding: 1rem 0;
+  }
+
+  .stat-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .stat-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .stat-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .stat-value {
+    font-size: 1.35rem;
+  }
+
+  .scroll-button {
+    display: none !important;
+  }
+
+  .query-container {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .show_query_container.sales_page_date_filter {
+    width: 95%;
+    padding: 1.5rem 2rem;
+  }
+
+  .dates_selection {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .query-cells .dash {
+    display: none;
+  }
+
+  .from,
+  .to {
+    gap: 0.4rem;
+  }
+
+  .specific_selection {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sales-page .query {
+    padding: 0.875rem 1.25rem;
+    font-size: 12px;
+  }
+
+  .sales-page .query span {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .statistics-wrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .statistics-grid {
+    grid-auto-columns: minmax(180px, 85vw);
+    gap: 0.65rem;
+    padding: 0.75rem 0;
+  }
+
+  .stat-card {
+    padding: 0.875rem;
+    gap: 0.875rem;
+    border-radius: 12px;
+  }
+
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .stat-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.4px;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
+  }
+
+  .show_query_container.sales_page_date_filter {
+    width: 100%;
+    padding: 1.6rem 1.5rem 3rem;
+    border-radius: 14px;
+  }
+
+  .dates_selection {
+    gap: 0.875rem;
+    padding: 1.5rem;
+  }
+
+  .from input.date_picker_input,
+  .to input.date_picker_input {
+    padding: 0.65rem 0.75rem;
+    font-size: 13px;
+  }
+
+  .from label,
+  .to label {
+    font-size: 12px;
+  }
+
+  .setDate {
+    padding: 10px 16px;
+    font-size: 13px;
+    margin: 1rem 0 0.875rem;
+  }
+
+  .specific_selection {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .specific_selection h1 {
+    font-size: 12px;
+    padding: 9px 6px;
+  }
+
+  .sales-page .query {
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    gap: 0.75rem;
+  }
+
+  .sales-page .query span {
+    font-size: 12px;
+  }
+
+  .sales-page .query img {
+    width: 16px;
+    height: 16px;
+  }
+}

@@ -1,0 +1,139 @@
+/* Modern Image Preview Modal */
+.image-preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease-out;
+  padding: 16px;
+}
+
+.image-preview-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 92vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+}
+
+.image-preview-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  max-height: 92vh;
+}
+
+.image-preview-content img {
+  max-width: 100%;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.image-preview-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.image-preview-close:hover {
+  background: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image-preview-close:active {
+  transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-preview-modal {
+    max-width: 95vw;
+    max-height: 85vh;
+    border-radius: 12px;
+  }
+
+  .image-preview-content img {
+    max-height: 85vh;
+  }
+
+  .image-preview-close {
+    width: 36px;
+    height: 36px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .image-preview-overlay {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-preview-modal {
+    max-width: 98vw;
+    max-height: 80vh;
+    border-radius: 10px;
+  }
+
+  .image-preview-content img {
+    max-height: 80vh;
+  }
+
+  .image-preview-close {
+    width: 32px;
+    height: 32px;
+    top: 8px;
+    right: 8px;
+  }
+}

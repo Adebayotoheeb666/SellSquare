@@ -1,0 +1,858 @@
+.product-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background: var(--brand-color); */
+}
+
+.product-group h1 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  margin-bottom: 30px;
+  color: var(--brand-color);
+}
+
+.product-group .product-form-group,
+.group-items-table {
+  width: 90%;
+}
+
+/* Center the image upload container */
+.product-group .image-upload-section {
+  justify-content: center;
+}
+
+.product-group .form-field.image-upload-section {
+  flex-direction: column !important;
+  align-items: center;
+}
+
+.image-upload-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border: 2px dashed var(--brand-color);
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.image-upload-container .selected-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-group-gallery {
+  width: 200px;
+  margin: 10px auto 0;
+}
+
+.image-gallery-strip .image-gallery-thumbs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.image-gallery-strip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.image-gallery-strip .image-thumb-btn {
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(142, 156, 195, 0.6);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.image-gallery-strip .image-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-gallery-strip .image-thumb-btn.active {
+  border: 2px solid var(--brand-color);
+}
+
+.image-gallery-strip .image-thumb-delete {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.image-gallery-strip .add-more-images-btn {
+  margin-top: 8px;
+  border: 1px solid var(--brand-color);
+  background: transparent;
+  color: var(--brand-color);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+/* .product-group .image-upload-section {
+  max-width: 90%;
+} */
+
+.product-group .product-form-group span {
+  display: flex;
+  font-size: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  line-height: 15px;
+  color: #2d9cdb;
+}
+
+.product-group .form-field {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+  justify-content: space-between;
+}
+
+/* Keep paired fields (like Attribute + Options) in a row */
+.product-group .form-field.product_group_attributes {
+  display: flex !important;
+  flex-wrap: nowrap;
+  gap: 14px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.product-group .form-field.product_group_attributes>div {
+  width: 50%;
+  min-width: 220px;
+}
+
+.product-group .form-field>img {
+  position: absolute;
+  top: 60%;
+  cursor: pointer;
+  right: -30px;
+}
+
+.product-group .form-field>div {
+  width: 49%;
+  min-width: 240px;
+}
+
+.product-group .form-field.single-field>div {
+  width: 100%;
+}
+
+.product-group .form-field>div label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--brand-color);
+  margin-bottom: 12px;
+}
+
+.product-group .form-field>div input,
+.product-group .form-field>div textarea {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 12px;
+  padding: 12px;
+  line-height: 24px;
+  background: transparent;
+  border: 1px solid var(--brand-color);
+  outline: none;
+  color: var(--brand-color);
+}
+
+.product-group .form-field>div .options {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 12px;
+  padding: 14px 6px;
+  line-height: 24px;
+  background: transparent;
+  border: 1px solid var(--brand-color);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  /* gap: 6px; */
+  color: var(--brand-color);
+}
+
+.product-group .form-field>div .options ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+}
+
+.product-group .form-field>div .options input {
+  width: fit-content;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  padding: 1px;
+  border: none;
+}
+
+.product-group .form-field>div .options ul li {
+  width: max-content;
+}
+
+.product-group .form-field>div .options ul li span {
+  background: #bdbdbd;
+  color: #767676;
+  display: flex;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 24px;
+  border-radius: 3px;
+  padding: 2px 8px;
+}
+
+.product-group .form-field>div .options ul li span img {
+  padding-left: 10px;
+}
+
+.check_unique {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0 0 10px;
+}
+
+.check_unique>p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.check_unique .checkbox-label {
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+  width: 20px !important;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Hide the browser's default checkbox */
+.check_unique .checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.check_unique .checkbox-label .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eaeaea;
+  border-radius: 2px;
+}
+
+/* On mouse-over, add a grey background color */
+.check_unique .checkbox-label:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check_unique .checkbox-label input:checked~.checkmark {
+  background-color: var(--brand-color);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.check_unique .checkbox-label .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.check_unique .checkbox-label input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.check_unique .checkbox-label .checkmark:after {
+  left: 7px;
+  top: 1px;
+  width: 6px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* item group part individual product*/
+.group-items-table {
+  margin-top: 80px;
+}
+
+.group-items-table table {
+  width: 100%;
+}
+
+.group-items-table table tr {
+  border: none;
+  position: relative;
+}
+
+.group-items-table table thead tr th {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  padding-bottom: 46px;
+  text-align: left;
+  color: var(--brand-color);
+}
+
+.group-items-table table thead tr th p {
+  color: #2d9cdb;
+  cursor: pointer;
+}
+
+.group-items-table table tbody tr td input {
+  width: 94%;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 12px;
+  padding: 12px;
+  line-height: 24px;
+  background: transparent;
+  border: 1px solid var(--brand-color);
+  outline: none;
+  color: var(--brand-color);
+}
+
+.group-items-table table tbody tr td.group-item-name {
+  width: 340px;
+}
+
+.group-items-table table tbody tr td {
+  width: 200px;
+}
+
+.group-items-table .combination-image-cell {
+  width: 120px;
+}
+
+.group-items-table .combination-image-upload {
+  width: 94%;
+  height: 60px;
+  border: 1px dashed var(--brand-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--brand-color);
+  font-size: 12px;
+}
+
+.group-items-table .combination-image-upload .combination-selected-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.group-items-table table tbody tr td.group-item-name>textarea,
+.group-items-table table tbody tr td>textarea,
+td>div textarea {
+  width: 94%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: text;
+  height: 60px;
+  border-radius: 12px;
+  padding: 12px;
+  line-height: 24px;
+  background: transparent;
+  border: 1px solid var(--brand-color);
+  outline: none;
+  color: var(--brand-color);
+}
+
+.group-items-table table tbody tr td.group-item-name>div span {
+  width: fit-content;
+}
+
+.group-items-table table tbody tr td.group-item-name>div input {
+  padding: 0;
+  width: 1px;
+  /* padding-right: 10px; */
+  border: none;
+  border-radius: 0;
+}
+
+.group-items-table table tbody {
+  width: 100%;
+}
+
+.group-items-table table tbody p {
+  font-style: italic;
+}
+
+.group-items-table table tr .delete-combinations {
+  position: absolute;
+  bottom: 40%;
+  cursor: pointer;
+  color: var(--brand-color);
+}
+
+.submit-product-group {
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.submit-product-group button {
+  /* margin: 100px; */
+  padding: 20px 200px;
+  border: none;
+  background-color: var(--brand-color);
+  border-radius: 12px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.product-group .product_group_instructions {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.product-group .product_group_instructions>ul {
+  list-style-type: square;
+  padding: 0;
+  margin: 0;
+  width: 48%;
+}
+
+.product-group .product_group_instructions>ul li ul {
+  list-style-type: square;
+  margin-left: 102px;
+  padding: 0;
+  margin: 0;
+}
+
+td .quantity-container {
+  display: flex;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+td:has(.quantity-container) {
+  width: 300px;
+}
+
+td .quantity-container button {
+  background: var(--brand-color);
+  color: #fff;
+  border: 1px solid var(--brand-color);
+  font-size: 24px;
+  border-radius: 12px;
+}
+
+td .quantity-container>* {
+  flex: 1;
+}
+
+
+@media screen and (max-width: 430px) {
+
+  .product-group .product-form-group,
+  .group-items-table {
+    width: 95%;
+  }
+
+  .group-items-table {
+    overflow-x: scroll;
+  }
+
+  .product-group h1 {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .product-group .form-field {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .product-group .image-upload-section {
+    max-width: 95%;
+    justify-content: center;
+  }
+
+  .product-group .image-upload-section.single-products {
+    max-width: 100%;
+  }
+
+  /* Mobile: keep row layout with proportional widths */
+  .product-group .form-field.product_group_attributes {
+    display: flex !important;
+    flex-wrap: nowrap;
+    width: 49%;
+    gap: 6px;
+    align-items: flex-end;
+    min-width: 0;
+  }
+
+  .product-group .form-field.product_group_attributes>div:first-of-type,
+  .product-group .form-field.product_group_attributes>div:nth-of-type(2) {
+    flex: 0 1 calc((100% - 28px - 6px) / 2);
+    /* share remaining space after icon + gap */
+    max-width: calc((100% - 28px - 6px) / 2);
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .product-group .form-field.product_group_attributes>img {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    position: static;
+    cursor: pointer;
+    align-self: center;
+  }
+
+  /* Prevent inner option list from forcing overflow */
+  .product-group .form-field.product_group_attributes>div .options ul {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  /* Keep inner controls from forcing overflow */
+  .product-group .form-field.product_group_attributes>div .options {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .product-group .form-field.product_group_attributes>div .options ul {
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 4px;
+    overflow-wrap: anywhere;
+  }
+
+  .product-group .form-field.product_group_attributes>div .options input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .product-group .form-field.product_group_attributes>img {
+    position: static;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .product-group .form-field>div {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .product-group .form-field>div label {
+    font-size: 10px;
+    line-height: 15px;
+    margin-bottom: 8px;
+  }
+
+  .product-group .form-field>div input,
+  .product-group .form-field>div textarea {
+    font-size: 10px;
+    line-height: 15px;
+    border-radius: 6px;
+  }
+
+  .group-items-table table thead tr th {
+    font-size: 10px;
+    line-height: 15px;
+    padding-bottom: 20px;
+  }
+
+  .group-items-table table thead tr th p,
+  tr td p {
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  .group-items-table .individual_item_group {
+    margin-bottom: 12px;
+  }
+
+  .group-items-table table tbody tr td.group-item-name {
+    width: unset;
+  }
+
+  .group-items-table table tr .delete-combinations {
+    position: static;
+    margin-top: 150%;
+  }
+
+  .group-items-table table tbody tr td input {
+    width: 100px;
+    font-size: 10px;
+    margin-right: 10px;
+    border-radius: 6px;
+    padding: 7px 6px;
+    line-height: 15px;
+  }
+
+  .group-items-table table tbody tr td.group-item-name>textarea,
+  .group-items-table table tbody tr td>textarea,
+  td>div textarea {
+    width: 100px;
+    margin-right: 10px;
+    font-size: 10px;
+    cursor: text;
+    height: auto;
+    border-radius: 6px;
+    padding: 7px 6px;
+    line-height: 15px;
+    min-width: 0;
+  }
+
+  .group-items-table .combination-image-upload {
+    width: 100px;
+    border-radius: 6px;
+    height: 60px;
+    margin-right: 10px;
+    font-size: 10px;
+  }
+
+  td>div>textarea {
+    margin: 0;
+  }
+
+  .product-group .form-field>div .options {
+    font-size: 10px;
+    border-radius: 6px;
+    padding: 14px 6px;
+    line-height: 15px;
+  }
+
+  .product-group .form-field>div .options ul {
+    gap: 4px;
+  }
+
+  .product-group .form-field>div .options ul li span {
+    font-size: 8px;
+    line-height: 12px;
+    border-radius: 3px;
+    padding: 4;
+    display: flex;
+    align-items: center;
+  }
+
+  .product-group .form-field>div .options ul li span img {
+    padding-left: 6px;
+    height: 4px;
+  }
+
+  .submit-product-group {
+    margin: 50px 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .submit-product-group button {
+    padding: 15px 0;
+    width: 95%;
+    font-size: 12px;
+    line-height: 18px;
+    border-radius: 6px;
+  }
+
+  .product-group .product_group_instructions>ul {
+    list-style-type: square;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+  }
+
+  /* td:has(.quantity-container) {
+    width: 500px !important; 
+    background: blue; 
+  } */
+
+  td .quantity-container {
+    width: 150px;
+  }
+
+  td .quantity-container button {
+    font-size: 14px;
+    border-radius: 5px;
+  }
+}
+
+/* Quantity Modal - match Fulfilment tooltip look & feel */
+.payment_tooltip_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+
+.payment_tooltip.quantity_tooltip {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  min-width: 280px;
+  max-width: 92vw;
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+
+.payment_tooltip_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.payment_tooltip_header span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.tooltip_close_btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: #6c757d;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.tooltip_close_btn:hover {
+  background: #f8f9fa;
+  color: #333;
+}
+
+.payment_tooltip_body {
+  padding: 16px;
+}
+
+.quantity_input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.quantity_input:focus {
+  outline: none;
+  border-color: var(--brand-color);
+}
+
+.tooltip_actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tooltip_action_btn {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tooltip_action_btn.confirm {
+  background: var(--brand-color);
+  color: #fff;
+  border: none;
+}
+
+.tooltip_action_btn.cancel {
+  background: #fff;
+  color: var(--brand-color);
+  border: 2px solid var(--brand-color);
+}
+
+.tooltip_action_btn:hover {
+  transform: translateY(-1px);
+}
+
+@media screen and (max-width: 480px) {
+  .payment_tooltip.quantity_tooltip {
+    min-width: 240px;
+  }
+}

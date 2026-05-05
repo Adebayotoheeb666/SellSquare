@@ -1,0 +1,109 @@
+import useProductGroup from "../../../customHook/useProductGroup";
+import ProductGroupForm from "../../../components/productGroupForm/ProductGroupForm";
+
+export default function AddProductGroup() {
+  const {
+    isLoading,
+    admin,
+    currentUser,
+    formData,
+    attributes,
+    combinations,
+    sku,
+    price,
+    warehouse,
+    quantity,
+    cost,
+    options,
+    inputRefs,
+    handleInputChange,
+    handleBlur,
+    handleKeyPress,
+    handleAddAttribute,
+    handleDeleteAttribute,
+    handleRemoveItem,
+    handleDeleteCombination,
+    handleSetCombinationName,
+    handleSkuChange,
+    handlePriceChange,
+    handleCostChange,
+    handleWarehouseChange,
+    handleQuantityChange,
+    handleCopySkuToAll,
+    handleCopyCostToAll,
+    handleCopyPriceToAll,
+    handleCopyWarehouseToAll,
+    handleCopyQuantityToAll,
+    saveProductGroup,
+    focusInput,
+    handleImageChange,
+    handleSelectGroupImage,
+    handleDeleteGroupImage,
+    handleCombinationImageChange,
+    groupImageItems,
+    activeGroupImageId,
+    combinationImagePreviews,
+    selectedBranches,
+    quantityDistribution,
+    branchQuantities,
+    allAvailableStores,
+    handleBranchChange,
+    handleQuantityDistributionChange,
+    handleBranchQuantityChange,
+  } = useProductGroup({ mode: "add" });
+
+  // console.log("Formdata Used", formData);
+
+  return (
+    <ProductGroupForm
+      mode="add"
+      isLoading={isLoading}
+      admin={admin}
+      currentUser={currentUser}
+      formData={formData}
+      attributes={attributes}
+      combinations={combinations}
+      sku={sku}
+      price={price}
+      warehouse={warehouse}
+      quantity={quantity}
+      cost={cost}
+      options={options}
+      inputRefs={inputRefs}
+      handleInputChange={handleInputChange}
+      handleBlur={handleBlur}
+      handleKeyPress={handleKeyPress}
+      handleAddAttribute={handleAddAttribute}
+      handleDeleteAttribute={handleDeleteAttribute}
+      handleRemoveItem={handleRemoveItem}
+      handleDeleteCombination={handleDeleteCombination}
+      handleSetCombinationName={handleSetCombinationName}
+      handleSkuChange={handleSkuChange}
+      handlePriceChange={handlePriceChange}
+      handleCostChange={handleCostChange}
+      handleWarehouseChange={handleWarehouseChange}
+      handleQuantityChange={handleQuantityChange}
+      handleCopySkuToAll={handleCopySkuToAll}
+      handleCopyCostToAll={handleCopyCostToAll}
+      handleCopyPriceToAll={handleCopyPriceToAll}
+      handleCopyWarehouseToAll={handleCopyWarehouseToAll}
+      handleCopyQuantityToAll={handleCopyQuantityToAll}
+      saveProductGroup={saveProductGroup}
+      focusInput={focusInput}
+      handleImageChange={handleImageChange}
+      handleSelectGroupImage={handleSelectGroupImage}
+      handleDeleteGroupImage={handleDeleteGroupImage}
+      handleCombinationImageChange={handleCombinationImageChange}
+      groupImageItems={groupImageItems}
+      activeGroupImageId={activeGroupImageId}
+      combinationImagePreviews={combinationImagePreviews}
+      selectedBranches={selectedBranches}
+      onBranchChange={handleBranchChange}
+      quantityDistribution={quantityDistribution}
+      onQuantityDistributionChange={handleQuantityDistributionChange}
+      branchQuantities={branchQuantities}
+      onBranchQuantityChange={handleBranchQuantityChange}
+      allAvailableStores={allAvailableStores}
+    />
+  );
+}

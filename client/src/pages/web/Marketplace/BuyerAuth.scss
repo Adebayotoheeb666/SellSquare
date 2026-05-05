@@ -1,0 +1,320 @@
+.buyer-auth-root {
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.buyer-auth-top-hero {
+  padding: 60px 120px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.buyer-auth-content-section {
+  flex: 1;
+  padding: 60px 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buyer-auth-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.buyer-auth-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.buyer-auth-form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.buyer-auth-form-inner {
+  width: 100%;
+  max-width: 450px;
+}
+
+.buyer-auth-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #171717;
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.buyer-auth-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 32px;
+  line-height: 1.6;
+}
+
+.buyer-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.buyer-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.buyer-form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  display: block;
+}
+
+.buyer-form-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buyer-form-input {
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "Manrope";
+  color: #171717;
+  transition: all 0.2s ease;
+  background: #fff;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--brand-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  }
+
+  &:disabled {
+    background: #f9fafb;
+    color: #9ca3af;
+    cursor: not-allowed;
+  }
+}
+
+.buyer-password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .buyer-form-input {
+    width: 100%;
+    padding-right: 40px;
+  }
+}
+
+.buyer-password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+
+  &:hover:not(:disabled) {
+    color: #374151;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.buyer-password-hint {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.buyer-auth-submit-btn {
+  padding: 12px 16px;
+  background: var(--brand-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: "Manrope";
+  margin-top: 8px;
+
+  &:hover:not(:disabled) {
+    background: #059669;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+  }
+}
+
+.buyer-auth-footer {
+  text-align: center;
+}
+
+.buyer-auth-footer-text {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.buyer-auth-link {
+  color: var(--brand-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #059669;
+    text-decoration: underline;
+  }
+}
+
+.buyer-auth-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.buyer-auth-illustration-content {
+  text-align: center;
+  max-width: 350px;
+}
+
+.buyer-auth-icon-box {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+
+  svg {
+    filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.2));
+  }
+}
+
+.buyer-auth-illustration-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #059669;
+  margin: 0 0 12px;
+}
+
+.buyer-auth-illustration-text {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .buyer-auth-top-hero {
+    padding: 40px 60px 0;
+  }
+
+  .buyer-auth-content-section {
+    padding: 40px 60px;
+  }
+
+  .buyer-auth-wrapper {
+    gap: 40px;
+  }
+
+  .buyer-auth-illustration {
+    min-height: 350px;
+  }
+
+  .buyer-auth-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .buyer-auth-top-hero {
+    padding: 30px 20px 0;
+  }
+
+  .buyer-auth-content-section {
+    padding: 30px 20px;
+  }
+
+  .buyer-auth-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .buyer-auth-illustration {
+    display: none;
+  }
+
+  .buyer-auth-form-inner {
+    max-width: 100%;
+  }
+
+  .buyer-auth-title {
+    font-size: 20px;
+  }
+
+  .buyer-auth-subtitle {
+    font-size: 13px;
+  }
+
+  .buyer-auth-form {
+    gap: 16px;
+  }
+
+  .buyer-auth-form-group {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buyer-auth-top-hero {
+    padding: 20px 16px 0;
+  }
+
+  .buyer-auth-content-section {
+    padding: 20px 16px;
+  }
+
+  .buyer-auth-title {
+    font-size: 18px;
+  }
+
+  .buyer-form-input {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,163 @@
+.auth {
+    height: 100vh;
+    /* background-color: orange; */
+    display: flex;
+    align-items: center;
+}
+
+.auth > div {
+    width: 500px;
+    padding: 2rem;
+    /* background: var(--brand-color); */
+}
+
+.auth .auth-header h1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: var(--brand-color);
+    margin-bottom: 40px;
+}
+
+.auth.confirm .auth-header h1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: var(--brand-color);
+    margin-bottom: 10px;
+}
+
+.auth.confirm .auth-header p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #B1B0B1;
+}
+
+.auth .auth-inputs .input-field {
+    width: 100%;
+}
+
+.input-field .password-input {
+    position: relative;
+    cursor: pointer;
+}
+
+.input-field .show-password {
+    position: absolute;
+    right: 30px;
+    top: 48%;
+}
+
+.input-field .show-password .cross-line {
+    width: 27px;
+    height: 2px;
+    background: var(--brand-color);
+    position: absolute;
+    top: 44%;
+    right: -2px;
+    transform: rotate(-40deg);
+}
+
+.auth .auth-inputs .input-field input {
+    width: 100%;
+    padding: 20px;
+    color: #B1B0B1;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--brand-color);
+    margin-bottom: 26px;
+    outline: none;
+}
+
+.auth .auth-inputs .input-field label {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    padding: 0 16px;
+    text-align: left;
+    color: var(--brand-color);
+    margin-bottom: 12px;
+}
+
+.auth .auth-inputs .forgot-password {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    color: var(--brand-color);
+}
+
+.auth .auth-inputs button.--btn {
+    margin: 24px 0 30px;
+    border-radius: 12px;
+}
+
+.auth .auth-inputs p {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--brand-color);
+    line-height: 24px;
+}
+
+.auth .auth-inputs p a {
+    font-weight: 700;
+}
+
+@media screen and (max-width: 430px) {
+    .auth .auth-header h1 {
+        font-size: 20px;
+    }
+
+    .auth.confirm .auth-header h1 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        line-height: 30px;
+    }
+
+    .auth.confirm .auth-header p {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .auth .auth-inputs .input-field input {
+        padding: 15px;
+        font-size: 12px;
+    }
+
+    .auth .auth-inputs .input-field label {
+        font-size: 10px;
+        margin-bottom: 5px;
+        padding: 0 16px;
+    }
+
+    .auth .auth-inputs .forgot-password {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .auth .auth-inputs button.--btn {
+        margin: 24px 0 30px;
+        padding: 15px 0;
+        font-size: 12px;
+        border-radius: 12px;
+    }
+
+    .auth .auth-inputs p, .auth .auth-inputs p a {
+        font-size: 10px;
+        line-height: 15px;
+    }
+    
+}

@@ -1,0 +1,103 @@
+.numbered-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.pagination-nav-btn,
+.pagination-number-btn {
+  min-width: 40px;
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-nav-btn:hover:not(:disabled),
+.pagination-number-btn:hover:not(.active) {
+  background-color: rgba(41, 95, 45, 0.05);
+  border-color: var(--brand-color);
+  transform: translateY(-1px);
+}
+
+.pagination-nav-btn:active:not(:disabled),
+.pagination-number-btn:active:not(.active) {
+  transform: translateY(0);
+}
+
+.pagination-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: #f9f9f9;
+}
+
+.pagination-number-btn.active {
+  background-color: var(--brand-color);
+  color: white;
+  border-color: var(--brand-color);
+  cursor: default;
+  font-weight: 600;
+}
+
+.pagination-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  color: #666;
+  font-size: 14px;
+  user-select: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .numbered-pagination {
+    gap: 6px;
+  }
+
+  .pagination-nav-btn,
+  .pagination-number-btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .pagination-ellipsis {
+    min-width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .numbered-pagination {
+    gap: 4px;
+  }
+
+  .pagination-nav-btn,
+  .pagination-number-btn {
+    min-width: 32px;
+    height: 32px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .pagination-ellipsis {
+    min-width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,57 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgS" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#0A1022" />
+    </linearGradient>
+    <linearGradient id="ribbonS" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF7BA5" />
+      <stop offset="100%" stop-color="#FF5C8D" />
+    </linearGradient>
+    <radialGradient id="haloS" cx="50%" cy="50%" r="0.75">
+      <stop offset="0%" stop-color="#6CE5B1" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#6CE5B1" stop-opacity="0" />
+    </radialGradient>
+    <style type="text/css"><![CDATA[
+      .text-main { font-family: 'Space Grotesk', 'Manrope', 'Sora', Arial, sans-serif; fill: #F4EDE1; font-weight: 700; }
+      .text-sub { font-family: 'Sora', 'Space Grotesk', Arial, sans-serif; fill: #E8E2D8; font-weight: 500; }
+      .tag { font-family: 'Sora', 'Space Grotesk', Arial, sans-serif; fill: #F4EDE1; font-weight: 600; }
+    ]]></style>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bgS)" />
+  <circle cx="360" cy="320" r="280" fill="url(#haloS)" />
+  <path d="M-40 360 C260 300 520 360 820 280 C980 240 1140 260 1200 220 L1200 460 L-40 560 Z" fill="url(#ribbonS)" opacity="0.95" />
+  <path d="M-20 720 C260 660 520 720 800 660 C980 620 1120 640 1160 600 L1160 840 L-20 920 Z" fill="#FF5C8D" opacity="0.55" />
+  <g stroke="#6DD3FF" stroke-width="3" stroke-linecap="round" opacity="0.7">
+    <path d="M160 220 C360 260 460 200 640 240" />
+    <path d="M840 780 C960 740 1040 780 1160 740" />
+    <path d="M180 860 L520 760" />
+    <path d="M760 320 L1040 260" />
+  </g>
+  <g fill="#F4EDE1" opacity="0.75">
+    <circle cx="200" cy="800" r="6" />
+    <circle cx="240" cy="840" r="4" />
+    <circle cx="940" cy="420" r="5" />
+    <circle cx="1000" cy="480" r="3" />
+    <circle cx="780" cy="960" r="6" />
+  </g>
+  <rect x="92" y="180" width="420" height="48" rx="24" fill="rgba(244,237,225,0.12)" stroke="rgba(109,211,255,0.4)" />
+  <text x="112" y="212" class="tag" font-size="20">SellSquare · Marketing Interns</text>
+  <text x="92" y="320" class="text-main" font-size="56">Join us as a Marketing Intern</text>
+  <text x="92" y="380" class="text-sub" font-size="26">Own campaigns, learn fast, and ship real work with a growth-first team.</text>
+  <rect x="92" y="420" width="480" height="160" rx="18" fill="rgba(19,28,51,0.78)" stroke="rgba(109,211,255,0.35)" />
+  <text x="120" y="468" class="text-main" font-size="22">What you'll do</text>
+  <text x="120" y="504" class="text-sub" font-size="18">• Build and launch social + email campaigns</text>
+  <text x="120" y="534" class="text-sub" font-size="18">• Partner with design + product to ship assets</text>
+  <text x="120" y="564" class="text-sub" font-size="18">• Learn from weekly 1:1 mentorship</text>
+  <rect x="92" y="600" width="420" height="140" rx="16" fill="#FF5C8D" opacity="0.92" />
+  <text x="122" y="648" class="text-main" font-size="24">Apply now → sellsquare.com/interns</text>
+  <text x="122" y="686" class="text-main" font-size="18" fill="#0A1022">Hybrid · Paid · Growth-focused</text>
+  <rect x="640" y="460" width="320" height="220" rx="14" fill="rgba(244,237,225,0.1)" stroke="rgba(109,211,255,0.35)" />
+  <text x="660" y="502" class="text-main" font-size="22">Why you'll love it</text>
+  <text x="660" y="538" class="text-sub" font-size="18">• Real campaigns, real impact</text>
+  <text x="660" y="568" class="text-sub" font-size="18">• Mentorship from growth leads</text>
+  <text x="660" y="598" class="text-sub" font-size="18">• Flexible, paid internship</text>
+  <text x="660" y="628" class="text-sub" font-size="18">• Build a portfolio that ships</text>
+  <text x="92" y="820" class="text-sub" font-size="18">Share this card on Instagram, LinkedIn, X, WhatsApp.</text>
+</svg>

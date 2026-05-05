@@ -1,0 +1,39 @@
+<svg width="1440" height="1920" viewBox="0 0 1440 1920" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#131C33" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#0A1022" />
+    </linearGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF7BA5" />
+      <stop offset="100%" stop-color="#FF5C8D" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6DD3FF" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#6DD3FF" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="0.7">
+      <stop offset="0%" stop-color="#6CE5B1" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#6CE5B1" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="1920" fill="url(#bg)" />
+  <rect x="-120" y="-80" width="1680" height="540" fill="url(#glow)" />
+  <circle cx="360" cy="380" r="320" fill="url(#halo)" />
+  <path d="M-60 540 C280 460 520 520 820 430 C1080 360 1340 380 1520 320 L1520 520 L-60 720 Z" fill="url(#ribbon)" opacity="0.95" />
+  <path d="M-40 900 C360 820 720 880 1100 800 C1320 750 1520 760 1540 720 L1540 980 L-40 1080 Z" fill="#FF5C8D" opacity="0.55" />
+  <g stroke="#6DD3FF" stroke-width="3" stroke-linecap="round" opacity="0.65">
+    <path d="M220 260 C420 300 520 220 720 260" />
+    <path d="M980 1240 C1160 1180 1260 1240 1420 1180" />
+    <path d="M160 1440 L540 1320" />
+    <path d="M960 420 L1320 360" />
+  </g>
+  <g fill="#F4EDE1" opacity="0.7">
+    <circle cx="220" cy="1180" r="6" />
+    <circle cx="260" cy="1220" r="4" />
+    <circle cx="1240" cy="520" r="5" />
+    <circle cx="1320" cy="580" r="3" />
+    <circle cx="1080" cy="1560" r="6" />
+  </g>
+</svg>

@@ -1,0 +1,3 @@
+# This file ensures the uploads folder is tracked by Git
+# The folder is needed for file upload functionality
+# Actual uploaded files should be ignored to keep the repository clean

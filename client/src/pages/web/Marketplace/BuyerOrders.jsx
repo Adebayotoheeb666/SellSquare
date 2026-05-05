@@ -15,13 +15,13 @@ import {
   selectBuyerWalletBalance,
   selectBuyerWalletCurrency,
 } from "../../../redux/features/buyerWallet/buyerWalletSlice";
-import { selectBuyer, logoutBuyer } from "../../../redux/features/buyerAuth/buyerAuthSlice";
+import { selectBuyer } from "../../../redux/features/buyerAuth/buyerAuthSlice";
 import { useBuyerRealtime } from "../../../customHook/useBuyerRealtime";
 import "./BuyerOrders.scss";
 
 /**
  * BuyerOrders Component
- * Displays all orders placed by the current buyer with enhanced dashboard features
+ * Displays all orders placed by the current buyer in a table format
  */
 const BuyerOrders = () => {
   const dispatch = useDispatch();
@@ -35,11 +35,6 @@ const BuyerOrders = () => {
   const walletCurrency = useSelector(selectBuyerWalletCurrency);
   const [currentPage, setCurrentPage] = useState(1);
   const [statusFilter, setStatusFilter] = useState(null);
-  
-  const handleLogout = async () => {
-    await dispatch(logoutBuyer());
-    navigate("/marketplace/login");
-  };
 
   // Initialize buyer realtime notifications
   useBuyerRealtime();
@@ -71,28 +66,11 @@ const BuyerOrders = () => {
   };
 
   const handleConfirmReceipt = (e, orderId) => {
-    e.stopPropagation(); // Prevent navigating to order details
+    e.stopPropagation();
     if (window.confirm("Are you sure you have received this order? This will release the funds to the seller.")) {
       dispatch(confirmOrderReceipt(orderId));
     }
   };
-
-  // Calculate order statistics
-  const getOrderStats = () => {
-    const stats = {
-      total: orders.length,
-      pending: orders.filter(order => order.status === 'payment_confirmed').length,
-      processing: orders.filter(order => ['accepted', 'processing'].includes(order.status)).length,
-      shipped: orders.filter(order => order.status === 'shipped').length,
-      delivered: orders.filter(order => order.status === 'delivered').length,
-      totalSpent: orders
-        .filter(order => order.status === 'delivered')
-        .reduce((sum, order) => sum + (order.subtotal || 0), 0)
-    };
-    return stats;
-  };
-
-  const stats = getOrderStats();
 
   const getStatusBadgeClass = (status) => {
     switch (status) {
@@ -130,113 +108,32 @@ const BuyerOrders = () => {
 
   return (
     <div className="buyer-dashboard">
-      {/* Welcome Section */}
-      <div className="dashboard-welcome">
-        <div className="welcome-content">
-          <div className="welcome-header-row">
-            <h1>Welcome back, {buyer?.firstName || 'Buyer'}! 👋</h1>
-            <button className="dashboard-logout-btn" onClick={handleLogout}>
-              Logout
-            </button>
-          </div>
-          <p>Here's what's happening with your orders and account</p>
-        </div>
-        <div className="wallet-summary">
-          <div className="wallet-balance">
-            <span className="balance-label">Wallet Balance</span>
-            <span className="balance-amount">
-              {walletCurrency}{walletBalance?.toLocaleString() || '0'}
-            </span>
-          </div>
-          <button
-            className="wallet-button"
-            onClick={() => navigate('/marketplace/buyer/wallet')}
-          >
-            View Wallet
-          </button>
-        </div>
-      </div>
-
-      {/* Quick Actions */}
-      <div className="quick-actions">
-        <button
-          className="action-button primary"
-          onClick={() => navigate('/marketplace')}
-        >
-          🛒 Continue Shopping
-        </button>
-        <button
-          className="action-button secondary"
-          onClick={() => navigate('/marketplace/cart')}
-        >
-          🛍️ View Cart
-        </button>
-        <button
-          className="action-button secondary"
-          onClick={() => navigate('/marketplace/buyer/wallet')}
-        >
-          💰 Wallet & Transactions
-        </button>
-      </div>
-
-      {/* Order Statistics */}
-      <div className="order-stats">
-        <div className="stat-card">
-          <div className="stat-icon">📦</div>
-          <div className="stat-info">
-            <span className="stat-number">{stats.total}</span>
-            <span className="stat-label">Total Orders</span>
-          </div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-icon">⏳</div>
-          <div className="stat-info">
-            <span className="stat-number">{stats.pending + stats.processing}</span>
-            <span className="stat-label">In Progress</span>
-          </div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-icon">🚚</div>
-          <div className="stat-info">
-            <span className="stat-number">{stats.shipped}</span>
-            <span className="stat-label">Shipped</span>
-          </div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-icon">✅</div>
-          <div className="stat-info">
-            <span className="stat-number">{stats.delivered}</span>
-            <span className="stat-label">Delivered</span>
-          </div>
-        </div>
-        <div className="stat-card highlight">
-          <div className="stat-icon">💰</div>
-          <div className="stat-info">
-            <span className="stat-number">{walletCurrency}{stats.totalSpent.toLocaleString()}</span>
-            <span className="stat-label">Total Spent</span>
-          </div>
+      {/* Header */}
+      <div className="dashboard-header">
+        <h1>Orders</h1>
+        <div className="header-right">
+          <input type="text" placeholder="Search" className="search-input" />
+          <button className="notification-btn">🔔</button>
+          <button className="user-menu-btn">👤</button>
         </div>
       </div>
 
       {/* Orders Section */}
-      <div className="orders-section">
-        <div className="section-header">
-          <h2>Your Orders</h2>
-          <div className="orders-controls">
-            <select
-              className="status-filter"
-              value={statusFilter || ""}
-              onChange={handleStatusFilterChange}
-            >
-              <option value="">All Orders</option>
-              <option value="payment_confirmed">Pending</option>
-              <option value="accepted">Accepted</option>
-              <option value="processing">Processing</option>
-              <option value="shipped">Shipped</option>
-              <option value="delivered">Delivered</option>
-              <option value="rejected">Rejected</option>
-            </select>
+      <div className="orders-container">
+        <div className="orders-header">
+          <h2>Order</h2>
+          <span className="orders-count">{orders.length} orders found</span>
+          <div className="orders-actions">
+            <button className="date-filter">Last 7 days ↓</button>
           </div>
+        </div>
+
+        {/* Tab Filters */}
+        <div className="status-tabs">
+          <button className={`tab ${!statusFilter ? 'active' : ''}`} onClick={() => { setStatusFilter(null); setCurrentPage(1); }}>All orders</button>
+          <button className={`tab ${statusFilter === 'payment_confirmed' ? 'active' : ''}`} onClick={() => { setStatusFilter('payment_confirmed'); setCurrentPage(1); }}>Active</button>
+          <button className={`tab ${statusFilter === 'delivered' ? 'active' : ''}`} onClick={() => { setStatusFilter('delivered'); setCurrentPage(1); }}>Completed</button>
+          <button className={`tab ${statusFilter === 'rejected' ? 'active' : ''}`} onClick={() => { setStatusFilter('rejected'); setCurrentPage(1); }}>Rejected</button>
         </div>
 
         {error && (
@@ -265,81 +162,97 @@ const BuyerOrders = () => {
           </div>
         ) : (
           <>
-            <div className="buyer-orders-list">
-              {orders.map((order) => (
-                <div
-                  key={order._id}
-                  className="order-card"
-                  onClick={() => handleOrderClick(order._id)}
-                >
-                  <div className="order-card-header">
-                    <div className="order-info">
-                      <h3>Order #{order.orderNumber}</h3>
-                      <p className="order-date">
-                        {new Date(order.createdAt).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'short',
-                          day: 'numeric'
-                        })}
-                      </p>
-                    </div>
-                    <span className={`status-badge ${getStatusBadgeClass(order.status)}`}>
-                      {getStatusLabel(order.status)}
-                    </span>
-                  </div>
-
-                  <div className="order-card-body">
-                    <div className="order-details">
-                      <p className="seller-name">
-                        <strong>🏪 Seller:</strong> {order.business?.businessName || "N/A"}
-                      </p>
-                      <p className="item-count">
-                        <strong>📦 Items:</strong> {order.lines?.length || 0} items
-                      </p>
-                      <p className="amount">
-                        <strong>💰 Amount:</strong> {walletCurrency}{(order.subtotal || 0).toLocaleString()}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="order-card-footer">
-                    {order.status === "delivered" && (
-                      <button
-                        className="confirm-receipt-button"
-                        onClick={(e) => handleConfirmReceipt(e, order._id)}
-                      >
-                        Confirm Receipt
-                      </button>
-                    )}
-                    <button className="view-details-button">
-                      View Details →
-                    </button>
-                  </div>
-                </div>
-              ))}
+            {/* Orders Table */}
+            <div className="table-wrapper">
+              <table className="orders-table">
+                <thead>
+                  <tr>
+                    <th className="col-checkbox">
+                      <input type="checkbox" />
+                    </th>
+                    <th className="col-order-id">Order ID</th>
+                    <th className="col-product">Product</th>
+                    <th className="col-address">Address</th>
+                    <th className="col-date">Date/Time</th>
+                    <th className="col-amount">Amount</th>
+                    <th className="col-status">Status</th>
+                    <th className="col-action">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {orders.map((order) => (
+                    <tr key={order._id} className="order-row" onClick={() => handleOrderClick(order._id)}>
+                      <td className="col-checkbox">
+                        <input type="checkbox" onClick={(e) => e.stopPropagation()} />
+                      </td>
+                      <td className="col-order-id">
+                        <span className="order-id">#{order.orderNumber || order._id.slice(0, 8)}</span>
+                      </td>
+                      <td className="col-product">
+                        <span className="product-name">{order.lines?.[0]?.product?.name || 'N/A'} and {order.lines?.length > 1 ? `${order.lines.length - 1} other products` : ''}</span>
+                      </td>
+                      <td className="col-address">
+                        <span className="address">{order.shippingAddress?.city || 'N/A'}, {order.shippingAddress?.state || ''}</span>
+                      </td>
+                      <td className="col-date">
+                        <span className="date-time">
+                          {new Date(order.createdAt).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: '2-digit'
+                          })}, {new Date(order.createdAt).toLocaleTimeString('en-US', {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: true
+                          })}
+                        </span>
+                      </td>
+                      <td className="col-amount">
+                        <span className="amount">{walletCurrency}{(order.subtotal || 0).toLocaleString()}</span>
+                      </td>
+                      <td className="col-status">
+                        <span className={`status-badge ${getStatusBadgeClass(order.status)}`}>
+                          {getStatusLabel(order.status)}
+                        </span>
+                      </td>
+                      <td className="col-action">
+                        <button className="action-menu-btn" onClick={(e) => e.stopPropagation()}>⋮</button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
 
-            {pagination.pages > 1 && (
+            {/* Pagination */}
+            {pagination && pagination.pages > 1 && (
               <div className="pagination">
-                <button
-                  disabled={currentPage === 1}
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  className="pagination-button"
-                >
-                  ← Previous
-                </button>
-
-                <div className="pagination-info">
-                  Page {currentPage} of {pagination.pages}
+                <span className="pagination-info">Showing 1 to 8 of {orders.length} entries</span>
+                <div className="pagination-buttons">
+                  <button
+                    disabled={currentPage === 1}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    className="pagination-button"
+                  >
+                    Previous
+                  </button>
+                  {Array.from({ length: pagination.pages }, (_, i) => i + 1).slice(0, 5).map((page) => (
+                    <button
+                      key={page}
+                      className={`pagination-button ${currentPage === page ? 'active' : ''}`}
+                      onClick={() => handlePageChange(page)}
+                    >
+                      {page}
+                    </button>
+                  ))}
+                  <button
+                    disabled={currentPage === pagination.pages}
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    className="pagination-button"
+                  >
+                    Next
+                  </button>
                 </div>
-
-                <button
-                  disabled={currentPage === pagination.pages}
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  className="pagination-button"
-                >
-                  Next →
-                </button>
               </div>
             )}
           </>

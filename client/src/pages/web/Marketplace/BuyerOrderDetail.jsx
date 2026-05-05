@@ -90,71 +90,49 @@ const BuyerOrderDetail = () => {
   return (
     <div className="order-detail-container">
       <button className="back-button" onClick={() => navigate(-1)}>
-        ← Go Back
+        ← Go back
       </button>
 
-      <div className="order-detail-header">
-        <div className="order-title-section">
-          <h1>Order #{order.orderNumber}</h1>
-          <p className="order-date">
-            {new Date(order.createdAt).toLocaleDateString("en-US", {
-              weekday: "long",
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </p>
-        </div>
-        <span className={`status-badge ${getStatusBadgeClass(order.status)}`}>
-          {getStatusLabel(order.status)}
-        </span>
-      </div>
+      <div className="product-list-section">
+        <h2>Product List</h2>
 
-      <div className="order-detail-content">
-        <div className="order-section seller-section">
-          <h3>Seller Information</h3>
-          <p className="seller-name">{order.business?.businessName || "N/A"}</p>
-          <p className="seller-email">{order.business?.businessEmail || "N/A"}</p>
-        </div>
-
-        <div className="order-section customer-section">
-          <h3>Shipping Address</h3>
-          <p>{order.shippingAddress || "N/A"}</p>
-        </div>
-
-        {order.rejectionReason && (
-          <div className="order-section rejection-section">
-            <h3>Rejection Reason</h3>
-            <p className="rejection-reason">{order.rejectionReason}</p>
-          </div>
-        )}
-
-        <div className="order-section items-section">
-          <h3>Order Items</h3>
-          <table className="items-table">
+        <div className="products-table-wrapper">
+          <table className="products-table">
             <thead>
               <tr>
-                <th>Product</th>
-                <th>SKU</th>
-                <th>Quantity</th>
-                <th>Unit Price</th>
-                <th>Total</th>
+                <th className="col-index">#</th>
+                <th className="col-image">Image</th>
+                <th className="col-product-name">Product Name</th>
+                <th className="col-price">Price</th>
+                <th className="col-quantity">Quantity</th>
+                <th className="col-subtotal">Sub-total</th>
+                <th className="col-action">Action</th>
               </tr>
             </thead>
             <tbody>
               {order.lines && order.lines.length > 0 ? (
                 order.lines.map((line, index) => (
                   <tr key={index}>
-                    <td>{line.name}</td>
-                    <td>{line.sku || "N/A"}</td>
-                    <td>{line.requestedQty}</td>
-                    <td>₦{line.unitPrice?.toLocaleString() || 0}</td>
-                    <td>₦{line.lineTotal?.toLocaleString() || 0}</td>
+                    <td className="col-index">{index + 1}</td>
+                    <td className="col-image">
+                      {line.product?.image ? (
+                        <img src={line.product.image} alt={line.name} className="product-thumbnail" />
+                      ) : (
+                        <div className="product-thumbnail-placeholder">No image</div>
+                      )}
+                    </td>
+                    <td className="col-product-name">{line.name || line.product?.name || "N/A"}</td>
+                    <td className="col-price">₦{line.unitPrice?.toLocaleString() || 0}</td>
+                    <td className="col-quantity">{line.requestedQty}</td>
+                    <td className="col-subtotal">₦{line.lineTotal?.toLocaleString() || 0}</td>
+                    <td className="col-action">
+                      <button className="action-btn" title="More options">⋮</button>
+                    </td>
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td colSpan="5" className="no-items">
+                  <td colSpan="7" className="no-items">
                     No items in this order
                   </td>
                 </tr>
@@ -163,44 +141,62 @@ const BuyerOrderDetail = () => {
           </table>
         </div>
 
-        <div className="order-section summary-section">
-          <h3>Order Summary</h3>
-          <div className="summary-row">
-            <span>Subtotal:</span>
-            <span>₦{order.subtotal?.toLocaleString() || 0}</span>
-          </div>
-          <div className="summary-row total">
-            <span>Total Amount:</span>
-            <span>₦{order.subtotal?.toLocaleString() || 0}</span>
+        <div className="order-totals">
+          <div className="total-row">
+            <span className="total-label">Total</span>
+            <span className="total-amount">₦{order.subtotal?.toLocaleString() || 0}</span>
           </div>
         </div>
 
-        {order.statusHistory && order.statusHistory.length > 0 && (
-          <div className="order-section timeline-section">
-            <h3>Status Timeline</h3>
-            <div className="timeline">
-              {order.statusHistory.map((entry, index) => (
-                <div key={index} className="timeline-item">
-                  <div className="timeline-marker"></div>
-                  <div className="timeline-content">
-                    <p className="timeline-transition">
-                      {entry.from} → {entry.to}
-                    </p>
-                    <p className="timeline-date">
-                      {new Date(entry.at).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                    </p>
-                    {entry.reason && (
-                      <p className="timeline-reason">Reason: {entry.reason}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
+        <div className="payment-method-section">
+          <h3>Payment Method</h3>
+          <p className="payment-type">{order.paymentMethod || "Card Payment"}</p>
+        </div>
+
+        <div className="tracking-details-section">
+          <h3>Tracking Details</h3>
+          <div className="tracking-grid">
+            <div className="tracking-item">
+              <label>Order ID</label>
+              <p className="tracking-value">{order.orderNumber || order._id}</p>
             </div>
+            <div className="tracking-item">
+              <label>Placed on</label>
+              <p className="tracking-value">
+                {new Date(order.createdAt).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </p>
+            </div>
+            <div className="tracking-item">
+              <label>Status</label>
+              <p className="tracking-value">
+                <span className={`status-badge ${getStatusBadgeClass(order.status)}`}>
+                  {getStatusLabel(order.status)}
+                </span>
+              </p>
+            </div>
+            <div className="tracking-item">
+              <label>Estimated Delivery Date</label>
+              <p className="tracking-value">
+                {order.estimatedDeliveryDate
+                  ? new Date(order.estimatedDeliveryDate).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })
+                  : "N/A"}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {order.rejectionReason && (
+          <div className="rejection-section">
+            <h3>Rejection Reason</h3>
+            <p className="rejection-reason">{order.rejectionReason}</p>
           </div>
         )}
       </div>

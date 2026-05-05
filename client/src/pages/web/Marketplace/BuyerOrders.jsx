@@ -113,8 +113,8 @@ const BuyerOrders = () => {
         <h1>Orders</h1>
         <div className="header-right">
           <input type="text" placeholder="Search" className="search-input" />
-          <button className="notification-btn">🔔</button>
-          <button className="user-menu-btn">👤</button>
+          <button className="notification-btn" title="Notifications">🔔</button>
+          <button className="user-menu-btn" title="User Menu">👤</button>
         </div>
       </div>
 
@@ -122,7 +122,9 @@ const BuyerOrders = () => {
       <div className="orders-container">
         <div className="orders-header">
           <h2>Order</h2>
-          <span className="orders-count">{orders.length} orders found</span>
+          <span className="orders-count">
+            {orders.length} {statusFilter ? 'orders found' : 'orders found'}
+          </span>
           <div className="orders-actions">
             <button className="date-filter">Last 7 days ↓</button>
           </div>
@@ -130,10 +132,30 @@ const BuyerOrders = () => {
 
         {/* Tab Filters */}
         <div className="status-tabs">
-          <button className={`tab ${!statusFilter ? 'active' : ''}`} onClick={() => { setStatusFilter(null); setCurrentPage(1); }}>All orders</button>
-          <button className={`tab ${statusFilter === 'payment_confirmed' ? 'active' : ''}`} onClick={() => { setStatusFilter('payment_confirmed'); setCurrentPage(1); }}>Active</button>
-          <button className={`tab ${statusFilter === 'delivered' ? 'active' : ''}`} onClick={() => { setStatusFilter('delivered'); setCurrentPage(1); }}>Completed</button>
-          <button className={`tab ${statusFilter === 'rejected' ? 'active' : ''}`} onClick={() => { setStatusFilter('rejected'); setCurrentPage(1); }}>Rejected</button>
+          <button
+            className={`tab ${!statusFilter ? 'active' : ''}`}
+            onClick={() => { setStatusFilter(null); setCurrentPage(1); }}
+          >
+            All orders
+          </button>
+          <button
+            className={`tab ${statusFilter === 'payment_confirmed' ? 'active' : ''}`}
+            onClick={() => { setStatusFilter('payment_confirmed'); setCurrentPage(1); }}
+          >
+            Active
+          </button>
+          <button
+            className={`tab ${statusFilter === 'delivered' ? 'active' : ''}`}
+            onClick={() => { setStatusFilter('delivered'); setCurrentPage(1); }}
+          >
+            Completed
+          </button>
+          <button
+            className={`tab ${statusFilter === 'rejected' ? 'active' : ''}`}
+            onClick={() => { setStatusFilter('rejected'); setCurrentPage(1); }}
+          >
+            Rejected
+          </button>
         </div>
 
         {error && (

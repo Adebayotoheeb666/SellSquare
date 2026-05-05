@@ -1,18 +1,19 @@
 .buyer-dashboard {
   background: #f8f9fa;
   min-height: 100vh;
-  padding: 2rem;
 
   .dashboard-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    padding: 2rem;
     gap: 1rem;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
 
     h1 {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 1.875rem;
+      font-weight: 600;
       margin: 0;
       color: #1f2937;
     }
@@ -20,20 +21,26 @@
     .header-right {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.25rem;
 
       .search-input {
         padding: 0.625rem 1rem;
         border: 1px solid #d1d5db;
-        border-radius: 8px;
-        font-size: 0.95rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
         width: 200px;
         transition: all 0.3s ease;
+        background: #f9fafb;
 
         &:focus {
           outline: none;
-          border-color: #3b82f6;
-          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+          border-color: #10b981;
+          background: white;
+          box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
+        }
+
+        &::placeholder {
+          color: #9ca3af;
         }
       }
 
@@ -45,10 +52,12 @@
         cursor: pointer;
         padding: 0.5rem;
         transition: all 0.3s ease;
-        border-radius: 8px;
+        border-radius: 6px;
+        color: #6b7280;
 
         &:hover {
-          background: rgba(0, 0, 0, 0.05);
+          background: #f3f4f6;
+          color: #1f2937;
         }
       }
     }
@@ -56,49 +65,51 @@
 
   .orders-container {
     background: white;
-    border-radius: 12px;
     padding: 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 
     .orders-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       gap: 1rem;
       flex-wrap: wrap;
 
       h2 {
-        font-size: 1.25rem;
-        font-weight: 700;
+        font-size: 1.125rem;
+        font-weight: 600;
         margin: 0;
         color: #1f2937;
       }
 
       .orders-count {
-        font-size: 0.9rem;
-        color: #6b7280;
-        font-weight: 500;
+        font-size: 0.85rem;
+        color: #9ca3af;
+        font-weight: 400;
       }
 
       .orders-actions {
         display: flex;
         gap: 0.75rem;
+        margin-left: auto;
 
         .date-filter {
           padding: 0.5rem 1rem;
           background: white;
-          border: 1px solid #d1d5db;
-          border-radius: 8px;
+          border: 1px solid #e5e7eb;
+          border-radius: 6px;
           cursor: pointer;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           font-weight: 500;
-          color: #1f2937;
+          color: #374151;
           transition: all 0.3s ease;
 
           &:hover {
             background: #f9fafb;
-            border-color: #9ca3af;
+            border-color: #d1d5db;
           }
         }
       }
@@ -107,27 +118,30 @@
     .status-tabs {
       display: flex;
       gap: 0;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       border-bottom: 1px solid #e5e7eb;
 
       .tab {
-        padding: 1rem 1.5rem;
+        padding: 0.875rem 1.25rem;
         background: none;
         border: none;
-        border-bottom: 2px solid transparent;
+        border-bottom: 3px solid transparent;
         cursor: pointer;
         font-weight: 500;
-        color: #6b7280;
-        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        color: #9ca3af;
+        transition: all 0.2s ease;
         position: relative;
+        white-space: nowrap;
 
         &:hover {
-          color: #1f2937;
+          color: #6b7280;
         }
 
         &.active {
           color: #1f2937;
           border-bottom-color: #10b981;
+          font-weight: 600;
         }
       }
     }
@@ -239,7 +253,7 @@
       .orders-table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
 
         thead {
           background: #f9fafb;
@@ -249,10 +263,11 @@
             padding: 1rem;
             text-align: left;
             font-weight: 600;
-            color: #6b7280;
-            font-size: 0.85rem;
+            color: #9ca3af;
+            font-size: 0.8rem;
             text-transform: none;
             white-space: nowrap;
+            letter-spacing: 0.5px;
 
             &.col-checkbox {
               width: 50px;
@@ -260,19 +275,19 @@
             }
 
             &.col-order-id {
-              width: 100px;
+              width: 90px;
             }
 
             &.col-product {
-              width: 300px;
+              width: 320px;
             }
 
             &.col-address {
-              width: 150px;
+              width: 160px;
             }
 
             &.col-date {
-              width: 160px;
+              width: 170px;
             }
 
             &.col-amount {
@@ -280,11 +295,12 @@
             }
 
             &.col-status {
-              width: 120px;
+              width: 130px;
             }
 
             &.col-action {
-              width: 50px;
+              width: 60px;
+              text-align: center;
             }
           }
         }
@@ -300,9 +316,9 @@
             }
 
             td {
-              padding: 1rem;
+              padding: 0.875rem 1rem;
               color: #374151;
-              font-weight: 500;
+              font-weight: 400;
 
               &.col-checkbox {
                 text-align: center;
@@ -316,13 +332,15 @@
                 .order-id {
                   font-weight: 600;
                   color: #1f2937;
+                  font-size: 0.875rem;
                 }
               }
 
               &.col-product {
                 .product-name {
                   color: #374151;
-                  font-weight: 500;
+                  font-weight: 400;
+                  font-size: 0.85rem;
                 }
               }
 
@@ -330,6 +348,7 @@
                 .address {
                   color: #6b7280;
                   font-weight: 400;
+                  font-size: 0.85rem;
                 }
               }
 
@@ -337,6 +356,7 @@
                 .date-time {
                   color: #6b7280;
                   font-weight: 400;
+                  font-size: 0.85rem;
                 }
               }
 
@@ -344,27 +364,28 @@
                 .amount {
                   font-weight: 600;
                   color: #1f2937;
+                  font-size: 0.875rem;
                 }
               }
 
               &.col-status {
                 .status-badge {
                   display: inline-block;
-                  padding: 0.375rem 0.875rem;
-                  border-radius: 20px;
-                  font-size: 0.8rem;
-                  font-weight: 600;
+                  padding: 0.375rem 0.75rem;
+                  border-radius: 12px;
+                  font-size: 0.75rem;
+                  font-weight: 500;
                   text-transform: capitalize;
                   white-space: nowrap;
 
                   &.status-pending {
                     background: #fef3c7;
-                    color: #d97706;
+                    color: #b45309;
                   }
 
                   &.status-accepted {
-                    background: #dcfce7;
-                    color: #166534;
+                    background: #d1fae5;
+                    color: #065f46;
                   }
 
                   &.status-processing {
@@ -389,7 +410,7 @@
 
                   &.status-rejected {
                     background: #fee2e2;
-                    color: #dc2626;
+                    color: #991b1b;
                   }
 
                   &.status-default {
@@ -405,12 +426,12 @@
                 .action-menu-btn {
                   background: none;
                   border: none;
-                  font-size: 1.25rem;
+                  font-size: 1.125rem;
                   cursor: pointer;
                   color: #6b7280;
-                  padding: 0.5rem;
+                  padding: 0.25rem 0.5rem;
                   transition: all 0.3s ease;
-                  border-radius: 6px;
+                  border-radius: 4px;
 
                   &:hover {
                     background: #f3f4f6;
@@ -428,13 +449,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 2rem;
+      padding-top: 1.5rem;
       border-top: 1px solid #e5e7eb;
 
       .pagination-info {
-        color: #6b7280;
-        font-size: 0.9rem;
-        font-weight: 500;
+        color: #9ca3af;
+        font-size: 0.85rem;
+        font-weight: 400;
       }
 
       .pagination-buttons {
@@ -443,14 +464,15 @@
         align-items: center;
 
         .pagination-button {
+          min-width: 40px;
           padding: 0.5rem 0.75rem;
           border: 1px solid #d1d5db;
           background: white;
-          color: #1f2937;
+          color: #374151;
           border-radius: 6px;
           cursor: pointer;
           font-weight: 500;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           transition: all 0.3s ease;
 
           &:hover:not(:disabled) {

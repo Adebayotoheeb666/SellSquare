@@ -113,8 +113,8 @@ const BuyerOrders = () => {
         <h1>Orders</h1>
         <div className="header-right">
           <input type="text" placeholder="Search" className="search-input" />
-          <button className="notification-btn">🔔</button>
-          <button className="user-menu-btn">👤</button>
+          <button className="notification-btn" title="Notifications">🔔</button>
+          <button className="user-menu-btn" title="User Menu">👤</button>
         </div>
       </div>
 

@@ -125,13 +125,14 @@
         padding: 0.875rem 1.25rem;
         background: none;
         border: none;
-        border-bottom: 2px solid transparent;
+        border-bottom: 3px solid transparent;
         cursor: pointer;
         font-weight: 500;
         font-size: 0.9rem;
         color: #9ca3af;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
         position: relative;
+        white-space: nowrap;
 
         &:hover {
           color: #6b7280;
@@ -140,6 +141,7 @@
         &.active {
           color: #1f2937;
           border-bottom-color: #10b981;
+          font-weight: 600;
         }
       }
     }

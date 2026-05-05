@@ -92,6 +92,56 @@ const BuyerLayout = ({ children }) => {
       path: "/marketplace/buyer/orders",
     },
     {
+      title: "Products",
+      icon: (
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="2"
+            y="2"
+            width="6"
+            height="6"
+            rx="1"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+          <rect
+            x="8"
+            y="2"
+            width="6"
+            height="6"
+            rx="1"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+          <rect
+            x="2"
+            y="8"
+            width="6"
+            height="6"
+            rx="1"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+          <rect
+            x="8"
+            y="8"
+            width="6"
+            height="6"
+            rx="1"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+        </svg>
+      ),
+      path: "/marketplace/buyer/products",
+    },
+    {
       title: "Wallet",
       icon: (
         <svg
@@ -119,6 +169,106 @@ const BuyerLayout = ({ children }) => {
         </svg>
       ),
       path: "/marketplace/buyer/wallet",
+    },
+    {
+      title: "Customers",
+      icon: (
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="5"
+            cy="4"
+            r="2"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+          <path
+            d="M1 13C1 11.3431 2.79086 10 5 10C7.20914 10 9 11.3431 9 13"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+          />
+          <circle
+            cx="11"
+            cy="5"
+            r="1.5"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+          <path
+            d="M8.5 13C8.5 11.6193 9.67157 10.5 11 10.5C12.3284 10.5 13.5 11.6193 13.5 13"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+          />
+        </svg>
+      ),
+      path: "/marketplace/buyer/customers",
+    },
+    {
+      title: "Discounts",
+      icon: (
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 8H14"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+          <circle
+            cx="5"
+            cy="4"
+            r="1.5"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+          <circle
+            cx="11"
+            cy="12"
+            r="1.5"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+        </svg>
+      ),
+      path: "/marketplace/buyer/discounts",
+    },
+    {
+      title: "Settings",
+      icon: (
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="2"
+            stroke="currentColor"
+            strokeWidth="1.4"
+          />
+          <path
+            d="M8 1V2M8 14V15M1 8H2M14 8H15M3.17 3.17L3.88 3.88M12.12 12.12L12.83 12.83M3.17 12.83L3.88 12.12M12.12 3.88L12.83 3.17"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+          />
+        </svg>
+      ),
+      path: "/marketplace/buyer/settings",
     },
   ];
 
